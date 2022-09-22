@@ -157,6 +157,11 @@
     "public.components.agents.vuls.table.detection_time": "检测时间",
     "public.components.agents.vuls.table.name": "设备名",
     "public.components.agents.vuls.table.severity": "告警",
-      "public.components.agents.vuls.table.version": "版本号"
+    "public.components.agents.vuls.table.version": "版本号",
+    "public.components.visualize.severity.alerts.table.description": "描述",
+    "public.components.visualize.severity.alerts.table.id": "技术(s)",
+    "public.components.visualize.severity.alerts.table.level": "等级",
+    "public.components.visualize.severity.alerts.table.rule.id": "Rule ID",
+    "public.components.visualize.severity.alerts.table.tactic": "策略(s)"
   }
 }

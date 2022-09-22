@@ -78,18 +78,18 @@ export const WzVisualize = compose(
 
     /**
      * Reset the visualizations when the type of Dashboard is changed.
-     * 
+     *
      * There are 2 kinds of Dashboards:
      *   - General or overview   --> When to agent is pinned.
      *   - Specific or per agent --> When there is an agent pinned.
-     * 
-     * The visualizations are reset only when the type of Dashboard changes 
+     *
+     * The visualizations are reset only when the type of Dashboard changes
      * from a type to another, but aren't when the pinned agent changes.
-     * 
+     *
      * More info:
      * https://github.com/wazuh/wazuh-kibana-app/issues/4230#issuecomment-1152161434
-     * 
-     * @param {Object} prevProps 
+     *
+     * @param {Object} prevProps
      */
     async componentDidUpdate(prevProps) {
       if (
@@ -218,7 +218,7 @@ export const WzVisualize = compose(
                     aria-label="Expand"
                   />
                 </EuiFlexGroup>
-                <div style={{ height: '100%' }}>   
+                <div style={{ height: '100%' }}>
                   <WzReduxProvider>
                     <KibanaVis
                       refreshKnownFields={this.refreshKnownFields}
@@ -316,7 +316,7 @@ export const WzVisualize = compose(
                 >
                   <EuiFlexItem className="h-100" style={{ marginBottom: 12 }}>
                     <EuiFlexGroup style={{ padding: '12px 12px 0px' }} className="embPanel__header">
-                      <h2 className="embPanel__title wz-headline-title">Security Alerts</h2>
+                      <h2 className="embPanel__title wz-headline-title">安全警报</h2>
                       <EuiButtonIcon
                         color="text"
                         style={{ padding: '0px 6px', height: 30 }}
