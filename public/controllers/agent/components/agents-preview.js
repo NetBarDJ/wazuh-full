@@ -78,8 +78,8 @@ export const AgentsPreview = compose(
       this._isMount = true;
       this.fetchAgentStatusDetailsData();
       if (this.wazuhConfig.getConfig()['wazuh.monitoring.enabled']) {
-        this._isMount && this.setState({ 
-          showAgentsEvolutionVisualization: true 
+        this._isMount && this.setState({
+          showAgentsEvolutionVisualization: true
         });
       }
     }
@@ -160,7 +160,7 @@ export const AgentsPreview = compose(
               )) || (
                 <>
                   <EuiFlexItem className="agents-status-pie" grow={false}>
-                    <EuiCard title description betaBadgeLabel="Status" className="eui-panel">
+                    <EuiCard title description betaBadgeLabel="状态" className="eui-panel">
                       <EuiFlexGroup>
                         <EuiFlexItem className="align-items-center">
                           <VisualizationBasic
@@ -181,7 +181,7 @@ export const AgentsPreview = compose(
                     </EuiCard>
                   </EuiFlexItem>
                   <EuiFlexItem grow={false} className="agents-details-card">
-                    <EuiCard title description betaBadgeLabel="Details">
+                    <EuiCard title description betaBadgeLabel="详情">
                       <EuiFlexGroup className="group-details">
                         {this.agentStatus.map(({status, label, color}) => (
                           <EuiFlexItem key={`agent-details-status-${status}`}>
@@ -204,7 +204,7 @@ export const AgentsPreview = compose(
                           <EuiStat
                             title={`${this.state.agentsActiveCoverage}%`}
                             titleSize='s'
-                            description="Agents coverage"
+                            description="代理覆盖范围"
                             className="white-space-nowrap"
                           />
                         </EuiFlexItem>
@@ -222,7 +222,7 @@ export const AgentsPreview = compose(
                                 </EuiToolTip>
                               }
                               titleSize="s"
-                              description="Last registered agent"
+                              description="最后注册的代理"
                               titleColor="primary"
                             />
                           </EuiFlexItem>
@@ -240,7 +240,7 @@ export const AgentsPreview = compose(
                               }
                               className="last-agents-link"
                               titleSize="s"
-                              description="Most active agent"
+                              description="最活跃的代理"
                               titleColor="primary"
                             />
                           </EuiFlexItem>
@@ -263,7 +263,7 @@ export const AgentsPreview = compose(
                     title
                     description
                     paddingSize="none"
-                    betaBadgeLabel="Evolution"
+                    betaBadgeLabel="时间线"
                     style={{ display: this.props.resultState === 'ready' ? 'block' : 'none' }}
                   >
                     <EuiFlexGroup>
@@ -290,7 +290,7 @@ export const AgentsPreview = compose(
                     title
                     description
                     paddingSize="none"
-                    betaBadgeLabel="Evolution"
+                    betaBadgeLabel="时间线"
                     style={{
                       height: 193,
                       display: this.props.resultState === 'none' ? 'block' : 'none',

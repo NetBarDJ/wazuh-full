@@ -22,7 +22,7 @@ export class WzStatusStats extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.agentStatus = ['total', ...UI_ORDER_AGENT_STATUS].map(status => ({
+    this.agentStatus = ['总', ...UI_ORDER_AGENT_STATUS].map(status => ({
       color: status !== 'total' ? agentStatusColorByAgentStatus(status) : 'primary',
       description: `${status === 'total' ? 'Total agents' : agentStatusLabelByAgentStatus(status)}`,
       status

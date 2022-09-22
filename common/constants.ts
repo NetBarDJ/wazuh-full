@@ -10,11 +10,12 @@
  * Find more information about this on the LICENSE file.
  */
 import path from 'path';
-import { version } from '../package.json';
+import {version} from '../package.json';
+import {i18n} from '@kbn/i18n';
 
 // Plugin
 export const PLUGIN_VERSION = version;
-export const PLUGIN_VERSION_SHORT = version.split('.').splice(0,2).join('.');
+export const PLUGIN_VERSION_SHORT = version.split('.').splice(0, 2).join('.');
 
 // Index patterns - Wazuh alerts
 export const WAZUH_INDEX_TYPE_ALERTS = 'alerts';
@@ -63,29 +64,29 @@ export const WAZUH_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION = 'threat-detection';
 export const WAZUH_SAMPLE_ALERTS_DEFAULT_NUMBER_ALERTS = 3000;
 export const WAZUH_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS = {
   [WAZUH_SAMPLE_ALERTS_CATEGORY_SECURITY]: [
-    { syscheck: true },
-    { aws: true },
-    { office: true },
-    { gcp: true },
-    { authentication: true },
-    { ssh: true },
-    { apache: true, alerts: 2000 },
-    { web: true },
-    { windows: { service_control_manager: true }, alerts: 1000 },
-    { github: true }
+    {syscheck: true},
+    {aws: true},
+    {office: true},
+    {gcp: true},
+    {authentication: true},
+    {ssh: true},
+    {apache: true, alerts: 2000},
+    {web: true},
+    {windows: {service_control_manager: true}, alerts: 1000},
+    {github: true}
   ],
   [WAZUH_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING]: [
-    { rootcheck: true },
-    { audit: true },
-    { openscap: true },
-    { ciscat: true },
+    {rootcheck: true},
+    {audit: true},
+    {openscap: true},
+    {ciscat: true},
   ],
   [WAZUH_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION]: [
-    { vulnerabilities: true },
-    { virustotal: true },
-    { osquery: true },
-    { docker: true },
-    { mitre: true },
+    {vulnerabilities: true},
+    {virustotal: true},
+    {osquery: true},
+    {docker: true},
+    {mitre: true},
   ],
 };
 
@@ -227,7 +228,7 @@ export const WAZUH_DEFAULT_APP_CONFIG = {
   'enrollment.password': '',
   'customization.logo.app': '',
   'customization.logo.sidebar': '',
-  'customization.logo.healthcheck':'',
+  'customization.logo.healthcheck': '',
   'customization.logo.reports': ''
 };
 
@@ -389,18 +390,28 @@ export const UI_COLOR_AGENT_STATUS = {
 } as const;
 
 export const UI_LABEL_NAME_AGENT_STATUS = {
-  [API_NAME_AGENT_STATUS.ACTIVE]: 'Active',
-  [API_NAME_AGENT_STATUS.DISCONNECTED]: 'Disconnected',
-  [API_NAME_AGENT_STATUS.PENDING]: 'Pending',
-  [API_NAME_AGENT_STATUS.NEVER_CONNECTED]: 'Never connected',
-  default: 'Unknown'
+  [API_NAME_AGENT_STATUS.ACTIVE]: i18n.translate('common.constants.status.ACTIVE', {
+    defaultMessage: 'Active',
+  }),
+  [API_NAME_AGENT_STATUS.DISCONNECTED]: i18n.translate('common.constants.status.DISCONNECTED', {
+    defaultMessage: 'Disconnected',
+  }),
+  [API_NAME_AGENT_STATUS.PENDING]: i18n.translate('common.constants.status.PENDING', {
+    defaultMessage: 'Pending',
+  }),
+  [API_NAME_AGENT_STATUS.NEVER_CONNECTED]: i18n.translate('common.constants.status.NEVER_CONNECTED', {
+    defaultMessage: 'Never connected',
+  }),
+  default: i18n.translate('common.constants.status.default', {
+    defaultMessage: 'Unknown',
+  })
 } as const;
 
 export const UI_ORDER_AGENT_STATUS = [
   API_NAME_AGENT_STATUS.ACTIVE,
   API_NAME_AGENT_STATUS.DISCONNECTED,
   API_NAME_AGENT_STATUS.PENDING,
-  API_NAME_AGENT_STATUS.NEVER_CONNECTED  
+  API_NAME_AGENT_STATUS.NEVER_CONNECTED
 ];
 
 // Documentation

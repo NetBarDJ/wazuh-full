@@ -14,241 +14,241 @@ import {i18n} from '@kbn/i18n';
 export const WAZUH_MODULES = {
   general: {
     title:
-      i18n.translate('mywazuh.overview.general.title', {
+      i18n.translate('common.overview.general.title', {
         defaultMessage: 'Security events',
       }),
     description:
-      i18n.translate('mywazuh.overview.general.des', {
+      i18n.translate('common.overview.general.des', {
         defaultMessage: 'Browse through your security alerts, identifying issues and threats in your environment.',
       })
   },
   fim: {
     title:
-      i18n.translate('mywazuh.overview.fim.title', {
+      i18n.translate('common.overview.fim.title', {
         defaultMessage: 'Integrity monitoring',
       }),
     description:
-      i18n.translate('mywazuh.overview.fim.des', {
+      i18n.translate('common.overview.fim.des', {
         defaultMessage: 'Alerts related to file changes, including permissions, content, ownership and attributes.',
       })
   },
   pm: {
-    title: i18n.translate('mywazuh.overview.pm.title', {
+    title: i18n.translate('common.overview.pm.title', {
       defaultMessage: 'Policy monitoring',
     }),
     description:
-      i18n.translate('mywazuh.overview.pm.des', {
+      i18n.translate('common.overview.pm.des', {
         defaultMessage: 'Verify that your systems are configured according to your security policies baseline.',
       })
   },
   vuls: {
-    title: i18n.translate('mywazuh.overview.vuls.title', {
+    title: i18n.translate('common.overview.vuls.title', {
       defaultMessage: 'Vulnerabilities',
     }),
     description:
-      i18n.translate('mywazuh.overview.vuls.des', {
+      i18n.translate('common.overview.vuls.des', {
         defaultMessage: 'Discover what applications in your environment are affected by well-known vulnerabilities.',
       })
   },
   oscap: {
-    title: i18n.translate('mywazuh.overview.oscap.title', {
+    title: i18n.translate('common.overview.oscap.title', {
       defaultMessage: 'OpenSCAP',
     }),
     description:
-      i18n.translate('mywazuh.overview.oscap.des', {
+      i18n.translate('common.overview.oscap.des', {
         defaultMessage: 'Configuration assessment and automation of compliance monitoring using SCAP checks.',
       })
   },
   audit: {
-    title: i18n.translate('mywazuh.overview.audit.title', {
+    title: i18n.translate('common.overview.audit.title', {
       defaultMessage: 'System auditing',
     }),
     description:
-      i18n.translate('mywazuh.overview.audit.des', {
+      i18n.translate('common.overview.audit.des', {
         defaultMessage: 'Audit users behavior, monitoring command execution and alerting on access to critical files.',
       })
   },
   pci: {
-    title: i18n.translate('mywazuh.overview.pci.title', {
+    title: i18n.translate('common.overview.pci.title', {
       defaultMessage: 'PCI DSS',
     }),
     description:
-      i18n.translate('mywazuh.overview.pci.des', {
+      i18n.translate('common.overview.pci.des', {
         defaultMessage: 'Global security standard for entities that process, store or transmit payment cardholder data.',
       })
   },
   gdpr: {
-    title: i18n.translate('mywazuh.overview.gdpr.title', {
+    title: i18n.translate('common.overview.gdpr.title', {
       defaultMessage: 'GDPR',
     }),
     description:
-      i18n.translate('mywazuh.overview.gdpr.des', {
+      i18n.translate('common.overview.gdpr.des', {
         defaultMessage: 'General Data Protection Regulation (GDPR) sets guidelines for processing of personal data.',
       })
   },
   hipaa: {
-    title: i18n.translate('mywazuh.overview.hipaa.title', {
+    title: i18n.translate('common.overview.hipaa.title', {
       defaultMessage: 'HIPAA',
     }),
     description:
-      i18n.translate('mywazuh.overview.hipaa.des', {
+      i18n.translate('common.overview.hipaa.des', {
         defaultMessage: 'Health Insurance Portability and Accountability Act of 1996 (HIPAA) provides data privacy and security provisions for safeguarding medical information.',
       })
   },
   nist: {
-    title: i18n.translate('mywazuh.overview.nist.title', {
+    title: i18n.translate('common.overview.nist.title', {
       defaultMessage: 'NIST 800-53',
     }),
     description:
-      i18n.translate('mywazuh.overview.nist.des', {
+      i18n.translate('common.overview.nist.des', {
         defaultMessage: 'National Institute of Standards and Technology Special Publication 800-53 (NIST 800-53) sets guidelines for federal information systems.',
       })
   },
   tsc: {
-    title: i18n.translate('mywazuh.overview.tsc.title', {
+    title: i18n.translate('common.overview.tsc.title', {
       defaultMessage: 'TSC',
     }),
     description:
-      i18n.translate('mywazuh.overview.tsc.des', {
+      i18n.translate('common.overview.tsc.des', {
         defaultMessage: 'Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy',
       })
   },
   ciscat: {
-    title: i18n.translate('mywazuh.overview.ciscat.title', {
+    title: i18n.translate('common.overview.ciscat.title', {
       defaultMessage: 'CIS-CAT',
     }),
     description:
-      i18n.translate('mywazuh.overview.ciscat.des', {
+      i18n.translate('common.overview.ciscat.des', {
         defaultMessage: 'Configuration assessment using Center of Internet Security scanner and SCAP checks.',
       })
   },
   aws: {
-    title: i18n.translate('mywazuh.overview.aws.title', {
+    title: i18n.translate('common.overview.aws.title', {
       defaultMessage: 'Amazon AWS',
     }),
     description:
-      i18n.translate('mywazuh.overview.aws.des', {
+      i18n.translate('common.overview.aws.des', {
         defaultMessage: 'Security events related to your Amazon AWS services, collected directly via AWS API.',
       })
   },
   office: {
-    title: i18n.translate('mywazuh.overview.office.title', {
+    title: i18n.translate('common.overview.office.title', {
       defaultMessage: 'Office 365',
     }),
     description:
-      i18n.translate('mywazuh.overview.office.des', {
+      i18n.translate('common.overview.office.des', {
         defaultMessage: 'Security events related to your Office 365 services.',
       })
   },
   gcp: {
-    title: i18n.translate('mywazuh.overview.gcp.title', {
+    title: i18n.translate('common.overview.gcp.title', {
       defaultMessage: 'Google Cloud Platform',
     }),
     description:
-      i18n.translate('mywazuh.overview.gcp.des', {
+      i18n.translate('common.overview.gcp.des', {
         defaultMessage: 'Security events related to your Google Cloud Platform services, collected directly via GCP API.',
       }) // TODO GCP
   },
   virustotal: {
-    title: i18n.translate('mywazuh.overview.virustotal.title', {
+    title: i18n.translate('common.overview.virustotal.title', {
       defaultMessage: 'VirusTotal',
     }),
     description:
-      i18n.translate('mywazuh.overview.virustotal.des', {
+      i18n.translate('common.overview.virustotal.des', {
         defaultMessage: 'Alerts resulting from VirusTotal analysis of suspicious files via an integration with their API.',
       })
   },
   mitre: {
-    title: i18n.translate('mywazuh.overview.mitre.title', {
+    title: i18n.translate('common.overview.mitre.title', {
       defaultMessage: 'MITRE ATT&CK',
     }),
     description:
-      i18n.translate('mywazuh.overview.mitre.des', {
+      i18n.translate('common.overview.mitre.des', {
         defaultMessage: 'Security events from the knowledge base of adversary tactics and techniques based on real-world observations',
       })
   },
   syscollector: {
-    title: i18n.translate('mywazuh.overview.syscollector.title', {
+    title: i18n.translate('common.overview.syscollector.title', {
       defaultMessage: 'Inventory data',
     }),
     description:
-      i18n.translate('mywazuh.overview.syscollector.des', {
+      i18n.translate('common.overview.syscollector.des', {
         defaultMessage: 'Applications, network configuration, open ports and processes running on your monitored systems.',
       })
   },
   stats: {
-    title: i18n.translate('mywazuh.overview.stats.title', {
+    title: i18n.translate('common.overview.stats.title', {
       defaultMessage: 'Stats',
     }),
-    description: i18n.translate('mywazuh.overview.stats.des', {
+    description: i18n.translate('common.overview.stats.des', {
       defaultMessage: 'Stats for agent and logcollector',
     })
   },
   configuration: {
-    title: i18n.translate('mywazuh.overview.configuration.title', {
+    title: i18n.translate('common.overview.configuration.title', {
       defaultMessage: 'Configuration',
     }),
     description:
-      i18n.translate('mywazuh.overview.configuration.des', {
+      i18n.translate('common.overview.configuration.des', {
         defaultMessage: 'Check the current agent configuration remotely applied by its group.',
       })
   },
   osquery: {
-    title: i18n.translate('mywazuh.overview.osquery.title', {
+    title: i18n.translate('common.overview.osquery.title', {
       defaultMessage: 'Osquery',
     }),
     description:
-      i18n.translate('mywazuh.overview.osquery.des', {
+      i18n.translate('common.overview.osquery.des', {
         defaultMessage: 'Osquery can be used to expose an operating system as a high-performance relational database.',
       })
   },
   sca: {
-    title: i18n.translate('mywazuh.overview.sca.title', {
+    title: i18n.translate('common.overview.sca.title', {
       defaultMessage: 'Security configuration assessment',
     }),
-    description: i18n.translate('mywazuh.overview.sca.des', {
+    description: i18n.translate('common.overview.sca.des', {
       defaultMessage: 'Scan your assets as part of a configuration assessment audit.',
     })
   },
   docker: {
-    title: i18n.translate('mywazuh.overview.docker.title', {
+    title: i18n.translate('common.overview.docker.title', {
       defaultMessage: 'Docker listener',
     }),
     description:
-      i18n.translate('mywazuh.overview.docker.des', {
+      i18n.translate('common.overview.docker.des', {
         defaultMessage: 'Monitor and collect the activity from Docker containers such as creation, running, starting, stopping or pausing events.',
       })
   },
   github: {
-    title: i18n.translate('mywazuh.overview.github.title', {
+    title: i18n.translate('common.overview.github.title', {
       defaultMessage: 'GitHub',
     }),
     description:
-      i18n.translate('mywazuh.overview.github.des', {
+      i18n.translate('common.overview.github.des', {
         defaultMessage: 'Monitoring events from audit logs of your GitHub organizations.',
       })
   },
   devTools: {
-    title: i18n.translate('mywazuh.overview.devTools.title', {
+    title: i18n.translate('common.overview.devTools.title', {
       defaultMessage: 'API console',
     }),
-    description: i18n.translate('mywazuh.overview.devTools.des', {
+    description: i18n.translate('common.overview.devTools.des', {
       defaultMessage: 'Test the Wazuh API endpoints.',
     })
   },
   logtest: {
-    title: i18n.translate('mywazuh.overview.logtest.title', {
+    title: i18n.translate('common.overview.logtest.title', {
       defaultMessage: 'Test your logs',
     }),
-    description: i18n.translate('mywazuh.overview.logtest.des', {
+    description: i18n.translate('common.overview.logtest.des', {
       defaultMessage: 'Check your ruleset testing logs.',
     })
   },
   testConfiguration: {
-    title: i18n.translate('mywazuh.overview.testConfiguration.title', {
+    title: i18n.translate('common.overview.testConfiguration.title', {
       defaultMessage: 'Test your configurations',
     }),
-    description: i18n.translate('mywazuh.overview.testConfiguration.des', {
+    description: i18n.translate('common.overview.testConfiguration.des', {
       defaultMessage: 'Check configurations before applying them',
     })
   }

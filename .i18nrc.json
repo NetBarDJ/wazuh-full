@@ -1,10 +1,10 @@
 {
-    "paths": {
-      "wazuh": "public",
-      "mywazuh": "."
-    },
-    "exclude": [
-    ],
-    "translations": ["translations/zh-CN.json"
-    ]
-  }
+  "paths": {
+    "common": "common",
+    "public.controllers": "public/controllers/agent"},
+  "exclude": [
+  ],
+  "translations": [
+    "translations/zh-CN.json"
+  ]
+}
