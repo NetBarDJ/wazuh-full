@@ -1,0 +1,138 @@
+{
+  "formats": {
+    "number": {
+      "currency": {
+        "style": "currency"
+      },
+      "percent": {
+        "style": "percent"
+      }
+    },
+    "date": {
+      "short": {
+        "month": "numeric",
+        "day": "numeric",
+        "year": "2-digit"
+      },
+      "medium": {
+        "month": "short",
+        "day": "numeric",
+        "year": "numeric"
+      },
+      "long": {
+        "month": "long",
+        "day": "numeric",
+        "year": "numeric"
+      },
+      "full": {
+        "weekday": "long",
+        "month": "long",
+        "day": "numeric",
+        "year": "numeric"
+      }
+    },
+    "time": {
+      "short": {
+        "hour": "numeric",
+        "minute": "numeric"
+      },
+      "medium": {
+        "hour": "numeric",
+        "minute": "numeric",
+        "second": "numeric"
+      },
+      "long": {
+        "hour": "numeric",
+        "minute": "numeric",
+        "second": "numeric",
+        "timeZoneName": "short"
+      },
+      "full": {
+        "hour": "numeric",
+        "minute": "numeric",
+        "second": "numeric",
+        "timeZoneName": "short"
+      }
+    },
+    "relative": {
+      "years": {
+        "units": "year"
+      },
+      "months": {
+        "units": "month"
+      },
+      "days": {
+        "units": "day"
+      },
+      "hours": {
+        "units": "hour"
+      },
+      "minutes": {
+        "units": "minute"
+      },
+      "seconds": {
+        "units": "second"
+      }
+    }
+  },
+  "messages": {
+    "mywazuh.overview.general.title": "安全事件",
+    "mywazuh.overview.general.des": "浏览安全警报，识别环境中的问题和威胁。",
+    "mywazuh.overview.fim.title": "完整性监测",
+    "mywazuh.overview.fim.des": "与文件更改相关的警报，包括权限、内容、所有权和属性。",
+    "mywazuh.overview.pm.title": "策略监测",
+    "mywazuh.overview.pm.des": "验证是否根据安全策略基线配置了系统。",
+    "mywazuh.overview.vuls.title": "漏洞",
+    "mywazuh.overview.vuls.des": "发现您的环境中哪些应用程序受到已知漏洞的影响。",
+    "mywazuh.overview.oscap.title": "OpenSCAP",
+    "mywazuh.overview.oscap.des": "配置评估和使用SCAP检查的合规性监控自动化。",
+    "mywazuh.overview.audit.title": "系统审计",
+    "mywazuh.overview.audit.des": "审核用户行为，监控命令执行，并在访问关键文件时发出警报。",
+    "mywazuh.overview.pci.title": "PCI DSS",
+    "mywazuh.overview.pci.des": "处理、存储或传输支付持卡人数据的实体的全球安全标准。",
+    "mywazuh.overview.gdpr.title": "GDPR",
+    "mywazuh.overview.gdpr.des": "《一般数据保护条例》（GDPR）规定了个人数据处理指南.",
+    "mywazuh.overview.hipaa.title": "HIPAA",
+    "mywazuh.overview.hipaa.des": "1996年《健康保险可携带性和责任法案》（HIPAA）为保护医疗信息提供了数据隐私和安全规定。",
+    "mywazuh.overview.nist.title": "NIST 800-53",
+    "mywazuh.overview.nist.des": "国家标准与技术研究所特别出版物800-53（NIST 800-53）为联邦信息系统制定了指南。",
+    "mywazuh.overview.tsc.title": "TSC",
+    "mywazuh.overview.tsc.des": "信任服务安全性、可用性、处理完整性、机密性和隐私标准",
+    "mywazuh.overview.ciscat.title": "CIS-CAT",
+    "mywazuh.overview.ciscat.des": "使用互联网安全扫描中心和SCAP检查进行配置评估。",
+    "mywazuh.overview.aws.title": "亚马逊AWS",
+    "mywazuh.overview.aws.des": "与亚马逊AWS服务相关的安全事件，直接通过AWS API收集。",
+    "mywazuh.overview.office.title": "Office 365",
+    "mywazuh.overview.office.des": "与Office 365服务相关的安全事件。",
+    "mywazuh.overview.gcp.title": "谷歌云平台",
+    "mywazuh.overview.gcp.des": "与您的Google云平台Office 365服务相关的安全事件。",
+    "mywazuh.overview.virustotal.title": "病毒总数",
+    "mywazuh.overview.virustotal.des": "通过与API集成对可疑文件进行VirusTotal分析而产生的警报。",
+    "mywazuh.overview.mitre.title": "MITRE ATT&CK",
+    "mywazuh.overview.mitre.des": "基于真实世界观察的对手战术和技术知识库中的安全事件",
+    "mywazuh.overview.syscollector.title": "库存数据",
+    "mywazuh.overview.syscollector.des": "应用程序、网络配置、开放端口和在受监控系统上运行的进程。",
+    "mywazuh.overview.stats.title": "统计数据",
+    "mywazuh.overview.stats.des": "代理和日志收集器的统计信息",
+    "mywazuh.overview.configuration.title": "配置",
+    "mywazuh.overview.configuration.des": "检查其组远程应用的当前代理配置。",
+    "mywazuh.overview.osquery.title": "检查其组远程应用的当前代理配置。",
+    "mywazuh.overview.osquery.des": "Osquery可用于将操作系统公开为高性能关系数据库。",
+    "mywazuh.overview.sca.title": "安全配置评估",
+    "mywazuh.overview.sca.des": "作为配置评估审核的一部分，扫描资产。",
+    "mywazuh.overview.docker.title": "Docker监听器",
+    "mywazuh.overview.docker.des": "监控和收集Docker容器中的活动，如创建、运行、启动、停止或暂停事件。",
+    "mywazuh.overview.github.title": "GitHub",
+    "mywazuh.overview.github.des": "监控GitHub组织的审核日志中的事件。",
+    "mywazuh.overview.devTools.title": "API控制台",
+    "mywazuh.overview.devTools.des": "测试Wazuh API端点。",
+    "mywazuh.overview.logtest.title": "测试日志",
+    "mywazuh.overview.logtest.des": "检查规则集测试日志。",
+    "mywazuh.overview.testConfiguration.title": "测试您的配置",
+    "mywazuh.overview.testConfiguration.des": "应用配置前检查配置",
+    "mywazuh.menu.overview.modules.AMAZON_WEB_SERVICES": "亚马逊AWS",
+    "mywazuh.menu.overview.modules.SECURITY_EVENTS": "安全事件",
+    "mywazuh.menu.overview.modules.STATISTICS": "测试",
+    "mywazuh.menu.overview.settings.ABOUT": "测试seee"
+  }
+}

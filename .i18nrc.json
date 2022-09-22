@@ -1,9 +1,10 @@
 {
     "paths": {
-      "wazuh": "public"
+      "wazuh": "public",
+      "mywazuh": "."
     },
     "exclude": [
     ],
-    "translations": [
+    "translations": ["translations/zh-CN.json"
     ]
   }
