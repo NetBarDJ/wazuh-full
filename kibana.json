@@ -1,0 +1,33 @@
+{
+  "id": "wazuh",
+  "version": "4.3.8-4309",
+  "kibanaVersion": "7.16.0",
+  "configPath": [
+    "wazuh"
+  ],
+  "requiredPlugins": [
+    "navigation",
+    "data",
+    "discover",
+    "inspector",
+    "visualizations",
+    "kibanaLegacy",
+    "uiActions",
+    "charts",
+    "savedObjects",
+    "kibanaReact",
+    "kibanaUtils"
+  ],
+  "optionalPlugins": [
+    "security",
+    "opendistroSecurityKibana",
+    "searchguard",
+    "spaces",
+    "telemetry"
+  ],
+  "server": true,
+  "ui": true,
+  "owner": {
+    "name": "Wazuh, Inc"
+  }
+}
