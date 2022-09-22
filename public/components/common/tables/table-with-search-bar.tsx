@@ -20,7 +20,7 @@ import { getErrorOrchestrator } from '../../../react-services/common-services';
 export function TableWithSearchBar({
   onSearch,
   searchBarSuggestions,
-  searchBarPlaceholder = 'Filter or search',
+  searchBarPlaceholder = '筛选或搜索',
   searchBarProps = {},
   tableColumns,
   rowProps,

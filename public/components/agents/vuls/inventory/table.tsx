@@ -17,6 +17,7 @@ import { filtersToObject, IFilter, IWzSuggestItem } from '../../../wz-search-bar
 import { TableWzAPI } from '../../../../components/common/tables';
 import { getFilterValues } from './lib';
 import { formatUIDate } from '../../../../react-services/time-service';
+import {i18n} from '@kbn/i18n';
 
 export class InventoryTable extends Component {
   state: {
@@ -155,51 +156,67 @@ export class InventoryTable extends Component {
     return [
       {
         field: 'name',
-        name: 'Name',
+        name: i18n.translate('public.components.agents.vuls.table.name', {
+        defaultMessage: 'Name',
+      }),
         sortable: true,
         width: '100px',
       },
       {
         field: 'version',
-        name: 'Version',
+        name: i18n.translate('public.components.agents.vuls.table.version', {
+        defaultMessage: 'Version',
+      }),
         sortable: true,
         truncateText: true,
         width: `${width}`,
       },
       {
         field: 'architecture',
-        name: 'Architecture',
+        name: i18n.translate('public.components.agents.vuls.table.architecture', {
+        defaultMessage: 'Architecture',
+      }),
         sortable: true,
         width: '100px',
       },
       {
         field: 'severity',
-        name: 'Severity',
+        name: i18n.translate('public.components.agents.vuls.table.severity', {
+        defaultMessage: 'Severity',
+      }),
         sortable: true,
         width: `${width}`,
       },
       {
         field: 'cve',
-        name: 'CVE',
+        name: i18n.translate('public.components.agents.vuls.table.cve', {
+        defaultMessage: 'CVE',
+      }),
         sortable: true,
         truncateText: true,
         width: `${width}`,
       },
       {
         field: 'cvss2_score',
-        name: 'CVSS2 Score',
+        name: i18n.translate('public.components.agents.vuls.table.cvss2_score', {
+        defaultMessage: 'CVSS2 Score',
+      }),
         sortable: true,
         width: `${width}`,
       },
       {
         field: 'cvss3_score',
-        name: 'CVSS3 Score',
+        name: i18n.translate('public.components.agents.vuls.table.cvss3_score', {
+        defaultMessage: 'CVSS3 Score',
+      }),
         sortable: true,
         width: `${width}`,
       },
       {
         field: 'detection_time',
-        name: 'Detection Time',
+        name: i18n.translate('public.components.agents.vuls.table.detection_time', {
+        defaultMessage: 'Detection Time',
+      }),
         sortable: true,
         width: `100px`,
         render: formatUIDate,
@@ -237,7 +254,7 @@ export class InventoryTable extends Component {
 
     return (
       <TableWzAPI
-        title="Vulnerabilities"
+        title="漏洞"
         tableColumns={columns}
         tableInitialSortingField="name"
         searchTable={true}

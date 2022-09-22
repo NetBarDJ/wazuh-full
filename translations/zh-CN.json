@@ -145,6 +145,18 @@
     "public.controllers.agents.preview.table.node_name": "群集节点",
     "public.controllers.agents.preview.table.os_name": "OS",
     "public.controllers.agents.preview.table.status": "状态",
-    "public.controllers.agents.preview.table.version": "版本"
+    "public.controllers.agents.preview.table.version": "版本",
+    "public.components.agents.vuls.severity.Critical": "故障",
+    "public.components.agents.vuls.severity.High": "警告",
+    "public.components.agents.vuls.severity.Low": "未分类",
+    "public.components.agents.vuls.severity.Medium": "信息",
+    "public.components.agents.vuls.table.architecture": "结构",
+    "public.components.agents.vuls.table.cve": "CVE",
+    "public.components.agents.vuls.table.cvss2_score": "CVSS2 Score",
+    "public.components.agents.vuls.table.cvss3_score": "CVSS3 Score",
+    "public.components.agents.vuls.table.detection_time": "检测时间",
+    "public.components.agents.vuls.table.name": "设备名",
+    "public.components.agents.vuls.table.severity": "告警",
+      "public.components.agents.vuls.table.version": "版本号"
   }
 }

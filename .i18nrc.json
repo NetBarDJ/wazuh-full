@@ -1,7 +1,10 @@
 {
   "paths": {
     "common": "common",
-    "public.controllers": "public/controllers/agent"},
+    "public.controllers": "public/controllers/",
+    "public.components": "public/components/"
+
+  },
   "exclude": [
   ],
   "translations": [

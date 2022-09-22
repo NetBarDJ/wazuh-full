@@ -58,10 +58,10 @@ export function ExportTableCsv({endpoint,totalItems,filters,title}){
       getErrorOrchestrator().handleError(options);
     }
   }
-  
+
   return <EuiFlexItem grow={false}>
   <EuiButtonEmpty isDisabled={(totalItems == 0)} iconType="importAction" onClick={() => downloadCsv()}>
-    Export formatted
+    格式化导出
   </EuiButtonEmpty>
     </EuiFlexItem>
 }
