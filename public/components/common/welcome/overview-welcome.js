@@ -92,7 +92,7 @@ export const OverviewWelcome = withErrorBoundary(class OverviewWelcome extends C
               {this.props.agentsCountTotal == 0 && this.addAgent()}
               <EuiFlexGroup>
                 <EuiFlexItem>
-                  <EuiCard title description betaBadgeLabel="Security Information Management">
+                  <EuiCard title description betaBadgeLabel="安全信息管理">
                     <EuiSpacer size="s" />
                     <EuiFlexGrid columns={2}>
                       {this.buildTabCard('general', 'dashboardApp')}
@@ -109,7 +109,7 @@ export const OverviewWelcome = withErrorBoundary(class OverviewWelcome extends C
                   </EuiCard>
                 </EuiFlexItem>
                 <EuiFlexItem>
-                  <EuiCard title description betaBadgeLabel="Auditing and Policy Monitoring">
+                  <EuiCard title description betaBadgeLabel="审计和政策监测">
                     <EuiSpacer size="s" />
                     <EuiFlexGrid columns={2}>
                       {this.buildTabCard('pm', 'advancedSettingsApp')}
@@ -128,7 +128,7 @@ export const OverviewWelcome = withErrorBoundary(class OverviewWelcome extends C
               <EuiSpacer size="xl" />
               <EuiFlexGroup>
                 <EuiFlexItem>
-                  <EuiCard title description betaBadgeLabel="Threat Detection and Response">
+                  <EuiCard title description betaBadgeLabel="威胁检测和响应">
                     <EuiSpacer size="s" />
                     <EuiFlexGrid columns={2}>
                       {this.buildTabCard('vuls', 'securityApp')}
@@ -145,7 +145,7 @@ export const OverviewWelcome = withErrorBoundary(class OverviewWelcome extends C
                 </EuiFlexItem>
 
                 <EuiFlexItem>
-                  <EuiCard title description betaBadgeLabel="Regulatory Compliance">
+                  <EuiCard title description betaBadgeLabel="法规遵从性">
                     <EuiSpacer size="s" />
                     {!this.props.extensions.pci &&
                       !this.props.extensions.gdpr &&
