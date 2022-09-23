@@ -345,7 +345,7 @@ export const ApiTable = compose(withErrorBoundary, withReduxProvider)(class ApiT
                   iconType="refresh"
                   onClick={async () => await this.refresh()}
                 >
-                  Refresh
+                  刷新
                 </EuiButtonEmpty>
               </EuiFlexItem>
             </EuiFlexGroup>

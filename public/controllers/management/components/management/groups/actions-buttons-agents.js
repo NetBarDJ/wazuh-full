@@ -251,7 +251,7 @@ class WzGroupsActionButtonsAgents extends Component {
     // Refresh
     const refreshButton = (
       <EuiButtonEmpty iconType="refresh" onClick={async () => await this.refresh()}>
-        Refresh
+        刷新
       </EuiButtonEmpty>
     );
 

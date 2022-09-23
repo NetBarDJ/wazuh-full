@@ -516,7 +516,7 @@ export const Techniques = withWindowSize(
               <EuiFlexGroup>
                 <EuiFlexItem grow={false}>
                   <EuiText grow={false}>
-                    <span>Hide techniques with no alerts </span> &nbsp;
+                    <span>隐藏没有警报的方法</span> &nbsp;
                     <EuiSwitch
                       label=""
                       checked={this.state.hideAlerts}
@@ -531,7 +531,7 @@ export const Techniques = withWindowSize(
 
           <WzFieldSearchDelay
             fullWidth={true}
-            placeholder="Filter techniques of selected tactic/s"
+            placeholder="根据选择的策略晒选使用的方法"
             onChange={this.onChange}
             onSearch={this.onSearch}
             isClearable={true}

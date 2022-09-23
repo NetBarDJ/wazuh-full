@@ -594,7 +594,7 @@ export class Inventory extends Component {
             !this.state.loading && (
               <EuiCallOut title="No scans available" iconType="iInCircle">
                 <EuiButton color="primary" onClick={() => this.initialize()}>
-                  Refresh
+                  刷新
                 </EuiButton>
               </EuiCallOut>
             )}
@@ -608,7 +608,7 @@ export class Inventory extends Component {
                 iconType="iInCircle"
               >
                 <EuiButton color="primary" onClick={() => this.initialize()}>
-                  Refresh
+                  刷新
                 </EuiButton>
               </EuiCallOut>
             )}
@@ -717,7 +717,7 @@ export class Inventory extends Component {
                         iconType="refresh"
                         onClick={() => this.loadScaPolicy(this.state.lookingPolicy)}
                       >
-                        Refresh
+                        刷新
                       </EuiButtonEmpty>
                     </EuiFlexItem>
                   </EuiFlexGroup>

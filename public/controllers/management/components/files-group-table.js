@@ -108,7 +108,7 @@ export class FilesInGroupTable extends Component {
             <EuiToolTip position="right" content="See file content">
               <EuiButtonIcon
                 aria-label="See file content"
-                onClick={() => 
+                onClick={() =>
                   this.props.openFileContent(
                     this.state.groupName,
                     item.filename
@@ -175,7 +175,7 @@ export class FilesInGroupTable extends Component {
           </EuiFlexItem>
           <EuiFlexItem grow={false}>
             <EuiButtonEmpty iconType="refresh" onClick={() => this.refresh()}>
-              Refresh
+              刷新
             </EuiButtonEmpty>
           </EuiFlexItem>
         </EuiFlexGroup>

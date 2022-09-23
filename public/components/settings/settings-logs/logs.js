@@ -93,7 +93,7 @@ class SettingsLogs extends Component {
             </EuiFlexItem>
             <EuiFlexItem grow={false}>
               <EuiButtonEmpty iconType="refresh" onClick={async () => await this.refresh()}>
-                Refresh
+                刷新
               </EuiButtonEmpty>
             </EuiFlexItem>
           </EuiFlexGroup>

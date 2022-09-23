@@ -84,7 +84,7 @@ class WzRefreshClusterInfoButton extends Component {
         onClick={() => this.checkIfClusterOrManager()}
         isDisabled={this.state.isLoading}
       >
-        Refresh
+        刷新
       </EuiButtonEmpty>
     );
   }

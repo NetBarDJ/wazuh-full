@@ -61,7 +61,7 @@ class WzWazuhAPINotReachable extends Component {
               <span>Wazuh API not reachable</span>
               <EuiHorizontalRule margin="s" />
               <EuiButton iconType="refresh" onClick={this.onClickRefresh}>
-                Refresh
+                刷新
               </EuiButton>
               <EuiSpacer size="s" />
             </div>

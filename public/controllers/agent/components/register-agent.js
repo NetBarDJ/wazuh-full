@@ -653,7 +653,7 @@ export const RegisterAgent = withErrorBoundary(
             },
           ]
           : []),
-        ...(this.state.selectedOS == 'rpm' && this.state.selectedVersion == 'centos5' || this.state.selectedVersion == 'redhat5' 
+        ...(this.state.selectedOS == 'rpm' && this.state.selectedVersion == 'centos5' || this.state.selectedVersion == 'redhat5'
           ? [
             {
               title: 'Choose the architecture',
@@ -799,7 +799,7 @@ export const RegisterAgent = withErrorBoundary(
                             onClick={() => this.props.reload()}
                             iconType="refresh"
                           >
-                            Refresh
+                            刷新
                           </EuiButtonEmpty>
                         )}
                       </EuiFlexItem>

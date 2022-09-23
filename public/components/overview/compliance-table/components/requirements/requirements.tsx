@@ -9,20 +9,21 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  EuiTitle,
+  EuiButtonIcon,
+  EuiContextMenu,
+  EuiFacetButton,
+  EuiFacetGroup,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiFacetButton,
   EuiIcon,
   EuiPopover,
-  EuiContextMenu,
-  EuiButtonIcon,
-  EuiFacetGroup,
+  EuiTitle,
   EuiToolTip
 } from '@elastic/eui';
-import { requirementsName } from '../../requirement-name';
+import {requirementsName} from '../../requirement-name';
+import {i18n} from '@kbn/i18n';
 
 export class ComplianceRequirements extends Component {
   _isMount = false;
@@ -30,8 +31,7 @@ export class ComplianceRequirements extends Component {
     isPopoverOpen: boolean
   }
 
-  props!: {
-  };
+  props!: {};
 
   constructor(props) {
     super(props);
@@ -40,10 +40,9 @@ export class ComplianceRequirements extends Component {
     }
   }
 
- 
 
-  facetClicked(id){
-    const { selectedRequirements: oldSelected, onChangeSelectedRequirements } = this.props;
+  facetClicked(id) {
+    const {selectedRequirements: oldSelected, onChangeSelectedRequirements} = this.props;
     const selectedRequirements = {
       ...oldSelected,
       [id]: !oldSelected[id]
@@ -52,42 +51,43 @@ export class ComplianceRequirements extends Component {
   }
 
 
-  getRequirementsList(){
+  getRequirementsList() {
     const requirementsCount = this.props.requirementsCount || [];
 
-    const { selectedRequirements } = this.props;
+    const {selectedRequirements} = this.props;
     const requirementIds = Object.keys(this.props.complianceObject);
-    const requirementList:Array<any> = requirementIds.map( item => {
-      let quantity = 0;
-      this.props.complianceObject[item].forEach(subitem => {
-        quantity += (requirementsCount.find(requirement => requirement.key === subitem) || {}).doc_count || 0;
-      })
-      return {
-        id: item,
-        label: item,
-        quantity,
-        onClick: (id) => this.facetClicked(id),
-      }}
+    const requirementList: Array<any> = requirementIds.map(item => {
+        let quantity = 0;
+        this.props.complianceObject[item].forEach(subitem => {
+          quantity += (requirementsCount.find(requirement => requirement.key === subitem) || {}).doc_count || 0;
+        })
+        return {
+          id: item,
+          label: item,
+          quantity,
+          onClick: (id) => this.facetClicked(id),
+        }
+      }
     );
-    
+
     return (
       <>
-      {requirementList.sort((a, b) => b.quantity - a.quantity).map(facet => {
-        let iconNode;
-        const name = requirementsName[facet.label] || `Requirement ${facet.label}`;
-        return (
-          <EuiFacetButton
-            key={"Requirement " + facet.id}
-            id={`Requirement ${facet.id}`}
-            quantity={facet.quantity}
-            isSelected={this.props.selectedRequirements[facet.id]}
-            isLoading={this.props.loadingAlerts}
-            icon={iconNode}
-            onClick={
-              facet.onClick ? () => facet.onClick(facet.id) : undefined
-            }>
+        {requirementList.sort((a, b) => b.quantity - a.quantity).map(facet => {
+          let iconNode;
+          const name = requirementsName[facet.label] || `Requirement ${facet.label}`;
+          return (
+            <EuiFacetButton
+              key={"Requirement " + facet.id}
+              id={`Requirement ${facet.id}`}
+              quantity={facet.quantity}
+              isSelected={this.props.selectedRequirements[facet.id]}
+              isLoading={this.props.loadingAlerts}
+              icon={iconNode}
+              onClick={
+                facet.onClick ? () => facet.onClick(facet.id) : undefined
+              }>
 
-                <EuiToolTip position="top" content={name} anchorClassName="wz-display-inline-grid" >
+              <EuiToolTip position="top" content={name} anchorClassName="wz-display-inline-grid">
                   <span style={{
                     display: "block",
                     overflow: "hidden",
@@ -96,28 +96,28 @@ export class ComplianceRequirements extends Component {
                   }}>
                     Requirement {facet.label}
                   </span>
-                </EuiToolTip>
-            
-          </EuiFacetButton>
-        );
-      })}
+              </EuiToolTip>
+
+            </EuiFacetButton>
+          );
+        })}
       </>
     );
-    
+
   }
 
-  onGearButtonClick(){
+  onGearButtonClick() {
     this.setState({isPopoverOpen: !this.state.isPopoverOpen});
   }
-  
 
-  closePopover(){
+
+  closePopover() {
     this.setState({isPopoverOpen: false});
   }
 
-  selectAll(status){
+  selectAll(status) {
     const {selectedRequirements, onChangeSelectedRequirements} = this.props;
-    Object.keys(selectedRequirements).map( item => {
+    Object.keys(selectedRequirements).map(item => {
       selectedRequirements[item] = status;
     });
     onChangeSelectedRequirements(selectedRequirements);
@@ -128,19 +128,25 @@ export class ComplianceRequirements extends Component {
     const panels = [
       {
         id: 0,
-        title: 'Options',
+        title: i18n.translate('public.components.overview.mitre.components.tactics.Options', {
+          defaultMessage: 'Options',
+        }),
         items: [
           {
-            name: 'Select all',
-            icon: <EuiIcon type="check" size="m" />,
+            name: i18n.translate('public.components.overview.mitre.components.tactics.select.all', {
+              defaultMessage: 'Select all',
+            }),
+            icon: <EuiIcon type="check" size="m"/>,
             onClick: () => {
               this.closePopover();
               this.selectAll(true);
             },
           },
           {
-            name: 'Unselect all',
-            icon: <EuiIcon type="cross" size="m" />,
+            name: i18n.translate('public.components.overview.mitre.components.tactics.unselect.all', {
+              defaultMessage: 'Unselect all',
+            }),
+            icon: <EuiIcon type="cross" size="m"/>,
             onClick: () => {
               this.closePopover();
               this.selectAll(false);
@@ -151,25 +157,25 @@ export class ComplianceRequirements extends Component {
     ]
     let sectionStyle = {}
     let title = "";
-    if(this.props.section === "gdpr"){
+    if (this.props.section === "gdpr") {
       sectionStyle["height"] = 300;
       title = "GDPR"
     }
-    if(this.props.section === "pci"){
+    if (this.props.section === "pci") {
       title = "PCI DSS"
     }
-    if(this.props.section === "hipaa"){
+    if (this.props.section === "hipaa") {
       title = "HIPAA"
     }
-    if(this.props.section === "nist"){
+    if (this.props.section === "nist") {
       title = "NIST 800-53"
     }
-    if(this.props.section === "tsc"){
+    if (this.props.section === "tsc") {
       title = "TSC";
       sectionStyle["height"] = 350;
     }
     return (
-      <div style={{ backgroundColor: "#80808014", padding: "10px 10px 0 10px", minHeight: 300,  height: "100%"}}>
+      <div style={{backgroundColor: "#80808014", padding: "10px 10px 0 10px", minHeight: 300, height: "100%"}}>
         <EuiFlexGroup>
           <EuiFlexItem>
             <EuiTitle size="m">
@@ -177,17 +183,17 @@ export class ComplianceRequirements extends Component {
             </EuiTitle>
           </EuiFlexItem>
 
-          <EuiFlexItem grow={false} style={{marginTop:'15px', marginRight:8}}> 
-             <EuiPopover
+          <EuiFlexItem grow={false} style={{marginTop: '15px', marginRight: 8}}>
+            <EuiPopover
               button={(<EuiButtonIcon iconType="gear" onClick={() => this.onGearButtonClick()}></EuiButtonIcon>)}
               isOpen={this.state.isPopoverOpen}
               panelPaddingSize="none"
               closePopover={() => this.closePopover()}>
-                <EuiContextMenu initialPanelId={0} panels={panels} />
-           </EuiPopover>
+              <EuiContextMenu initialPanelId={0} panels={panels}/>
+            </EuiPopover>
           </EuiFlexItem>
         </EuiFlexGroup>
-        <EuiFacetGroup style={{ }}>
+        <EuiFacetGroup style={{}}>
           {this.getRequirementsList()}
         </EuiFacetGroup>
 

@@ -66,7 +66,7 @@ class WzReportingActionButtons extends Component {
         iconType="refresh"
         onClick={async () => await this.refresh()}
       >
-        Refresh
+        刷新
       </EuiButtonEmpty>
     );
 

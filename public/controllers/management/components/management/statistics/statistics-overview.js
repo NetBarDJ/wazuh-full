@@ -173,7 +173,7 @@ export class WzStatisticsOverview extends Component {
                 iconType="refresh"
                 onClick={this.refreshVisualizations}
               >
-                Refresh
+                刷新
               </EuiButtonEmpty>
             </EuiFlexItem>
             {!!(
@@ -283,7 +283,7 @@ export default compose(
         }
         setLoading(false);
       };
-  
+
       fetchData();
     }, []);
     if(loading){

@@ -37,7 +37,7 @@ export class WzBlankScreen extends Component {
             <EuiSpacer />
 
             <EuiButton onClick={this.props.goToOverview} color="primary" fill>
-              Refresh
+              刷新
             </EuiButton>
           </>
         }

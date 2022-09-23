@@ -9,24 +9,25 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  EuiTitle,
-  EuiFlexGroup,
-  EuiFlexItem,
+  EuiButtonIcon,
+  EuiContextMenu,
   EuiFacetButton,
   EuiFacetGroup,
-  EuiPopover,
-  EuiButtonIcon,
+  EuiFlexGroup,
+  EuiFlexItem,
+  EuiIcon,
   EuiLoadingSpinner,
-  EuiContextMenu,
-  EuiIcon
+  EuiPopover,
+  EuiTitle
 } from '@elastic/eui'
-import { IFilterParams, getElasticAlerts } from '../../lib';
-import { getToasts }  from '../../../../../kibana-services';
-import { UI_LOGGER_LEVELS } from '../../../../../../common/constants';
-import { UI_ERROR_SEVERITIES } from '../../../../../react-services/error-orchestrator/types';
-import { getErrorOrchestrator } from '../../../../../react-services/common-services';
+import {getElasticAlerts, IFilterParams} from '../../lib';
+import {getToasts} from '../../../../../kibana-services';
+import {UI_LOGGER_LEVELS} from '../../../../../../common/constants';
+import {UI_ERROR_SEVERITIES} from '../../../../../react-services/error-orchestrator/types';
+import {getErrorOrchestrator} from '../../../../../react-services/common-services';
+import {i18n} from '@kbn/i18n';
 
 export class Tactics extends Component {
   _isMount = false;
@@ -75,8 +76,8 @@ export class Tactics extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { filterParams, indexPattern, selectedTactics, isLoading } = this.props;
-    const { tacticsCount, loadingAlerts } = this.state;
+    const {filterParams, indexPattern, selectedTactics, isLoading} = this.props;
+    const {tacticsCount, loadingAlerts} = this.state;
     if (nextState.loadingAlerts !== loadingAlerts) return true;
     if (nextProps.isLoading !== isLoading) return true;
     if (JSON.stringify(nextProps.filterParams) !== JSON.stringify(filterParams)) return true;
@@ -87,7 +88,7 @@ export class Tactics extends Component {
   }
 
   async componentDidUpdate(prevProps) {
-    const { isLoading, tacticsObject } = this.props;
+    const {isLoading, tacticsObject} = this.props;
     if (
       JSON.stringify(prevProps.tacticsObject) !== JSON.stringify(tacticsObject) ||
       isLoading !== prevProps.isLoading
@@ -106,10 +107,10 @@ export class Tactics extends Component {
   };
 
   async getTacticsCount() {
-    this.setState({ loadingAlerts: true });
-    const { firstTime } = this.state;
+    this.setState({loadingAlerts: true});
+    const {firstTime} = this.state;
     try {
-      const { indexPattern, filterParams } = this.props;
+      const {indexPattern, filterParams} = this.props;
       if (!indexPattern) {
         return;
       }
@@ -124,13 +125,13 @@ export class Tactics extends Component {
 
       // TODO: use `status` and `statusText`  to show errors
       // @ts-ignore
-      const { data } = await getElasticAlerts(indexPattern, filterParams, aggs);
-      const { buckets } = data.aggregations.tactics;
+      const {data} = await getElasticAlerts(indexPattern, filterParams, aggs);
+      const {buckets} = data.aggregations.tactics;
       if (firstTime) {
         this.initTactics(buckets); // top tactics are checked on component mount
       }
       this._isMount &&
-        this.setState({ tacticsCount: buckets, loadingAlerts: false, firstTime: false });
+      this.setState({tacticsCount: buckets, loadingAlerts: false, firstTime: false});
     } catch (error) {
       const options = {
         context: `${Tactics.name}.getTacticsCount`,
@@ -145,7 +146,7 @@ export class Tactics extends Component {
         },
       };
       getErrorOrchestrator().handleError(options);
-      this.setState({ loadingAlerts: false });
+      this.setState({loadingAlerts: false});
     }
   }
 
@@ -154,7 +155,7 @@ export class Tactics extends Component {
   }
 
   facetClicked(id) {
-    const { selectedTactics: oldSelected, onChangeSelectedTactics } = this.props;
+    const {selectedTactics: oldSelected, onChangeSelectedTactics} = this.props;
     const selectedTactics = {
       ...oldSelected,
       [id]: !oldSelected[id],
@@ -163,8 +164,8 @@ export class Tactics extends Component {
   }
 
   getTacticsList() {
-    const { tacticsCount } = this.state;
-    const { selectedTactics } = this.props;
+    const {tacticsCount} = this.state;
+    const {selectedTactics} = this.props;
     const tacticsIds = Object.keys(this.props.tacticsObject);
     const tacticsList: Array<any> = tacticsIds.map((item) => {
       const quantity = (tacticsCount.find((tactic) => tactic.key === item) || {}).doc_count || 0;
@@ -201,38 +202,38 @@ export class Tactics extends Component {
   }
 
   checkAllChecked(tacticList: any[]) {
-    const { selectedTactics } = this.props;
+    const {selectedTactics} = this.props;
     let allSelected = true;
     tacticList.forEach((item) => {
       if (!selectedTactics[item.id]) allSelected = false;
     });
 
     if (allSelected !== this.state.allSelected) {
-      this.setState({ allSelected });
+      this.setState({allSelected});
     }
   }
 
   onCheckAllClick() {
     const allSelected = !this.state.allSelected;
-    const { selectedTactics, onChangeSelectedTactics } = this.props;
+    const {selectedTactics, onChangeSelectedTactics} = this.props;
     Object.keys(selectedTactics).map((item) => {
       selectedTactics[item] = allSelected;
     });
 
-    this.setState({ allSelected });
+    this.setState({allSelected});
     onChangeSelectedTactics(selectedTactics);
   }
 
   onGearButtonClick() {
-    this.setState({ isPopoverOpen: !this.state.isPopoverOpen });
+    this.setState({isPopoverOpen: !this.state.isPopoverOpen});
   }
 
   closePopover() {
-    this.setState({ isPopoverOpen: false });
+    this.setState({isPopoverOpen: false});
   }
 
   selectAll(status) {
-    const { selectedTactics, onChangeSelectedTactics } = this.props;
+    const {selectedTactics, onChangeSelectedTactics} = this.props;
     Object.keys(selectedTactics).map((item) => {
       selectedTactics[item] = status;
     });
@@ -243,19 +244,25 @@ export class Tactics extends Component {
     const panels = [
       {
         id: 0,
-        title: 'Options',
+        title: i18n.translate('public.components.overview.mitre.components.tactics.Options', {
+              defaultMessage: 'Options',
+            }),
         items: [
           {
-            name: 'Select all',
-            icon: <EuiIcon type="check" size="m" />,
+            name: i18n.translate('public.components.overview.mitre.components.tactics.select.all', {
+              defaultMessage: 'Select all',
+            }),
+            icon: <EuiIcon type="check" size="m"/>,
             onClick: () => {
               this.closePopover();
               this.selectAll(true);
             },
           },
           {
-            name: 'Unselect all',
-            icon: <EuiIcon type="cross" size="m" />,
+            name: i18n.translate('public.components.overview.mitre.components.tactics.unselect.all', {
+              defaultMessage: 'Unselect all',
+            }),
+            icon: <EuiIcon type="cross" size="m"/>,
             onClick: () => {
               this.closePopover();
               this.selectAll(false);
@@ -265,7 +272,7 @@ export class Tactics extends Component {
       },
     ];
     return (
-      <div style={{ backgroundColor: '#80808014', padding: '10px 10px 0 10px', height: '100%' }}>
+      <div style={{backgroundColor: '#80808014', padding: '10px 10px 0 10px', height: '100%'}}>
         <EuiFlexGroup>
           <EuiFlexItem>
             <EuiTitle size="m">
@@ -273,7 +280,7 @@ export class Tactics extends Component {
             </EuiTitle>
           </EuiFlexItem>
 
-          <EuiFlexItem grow={false} style={{ marginTop: '15px', marginRight: 8 }}>
+          <EuiFlexItem grow={false} style={{marginTop: '15px', marginRight: 8}}>
             <EuiPopover
               button={
                 <EuiButtonIcon
@@ -286,13 +293,13 @@ export class Tactics extends Component {
               panelPaddingSize="none"
               closePopover={() => this.closePopover()}
             >
-              <EuiContextMenu initialPanelId={0} panels={panels} />
+              <EuiContextMenu initialPanelId={0} panels={panels}/>
             </EuiPopover>
           </EuiFlexItem>
         </EuiFlexGroup>
         {this.props.isLoading ? (
-          <EuiFlexItem style={{ alignItems: 'center', marginTop: 50 }}>
-            <EuiLoadingSpinner size="xl" />
+          <EuiFlexItem style={{alignItems: 'center', marginTop: 50}}>
+            <EuiLoadingSpinner size="xl"/>
           </EuiFlexItem>
         ) : (
           <EuiFacetGroup style={{}}>{this.getTacticsList()}</EuiFacetGroup>
