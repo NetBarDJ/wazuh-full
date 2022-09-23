@@ -300,7 +300,7 @@ export const AgentsPreview = compose(
                       className="wz-padding-21"
                       iconType="alert"
                       titleSize="xs"
-                      title={<h3>No results found in the selected time range</h3>}
+                      title={<h3>在所选时间范围内未找到结果</h3>}
                       actions={<WzDatePicker condensed={true} onTimeChange={() => {}} />}
                     />
                   </EuiCard>

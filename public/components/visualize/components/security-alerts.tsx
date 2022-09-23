@@ -19,13 +19,27 @@ export const SecurityAlerts = ({
   initialColumns = [
     { field: 'icon' },
     { field: 'timestamp' },
-    { field: 'agent.id', label: 'Agent' },
-    { field: 'agent.name', label: 'Agent name' },
-    { field: 'rule.mitre.id', label: 'Technique(s)' },
-    { field: 'rule.mitre.tactic', label: 'Tactic(s)' },
-    { field: 'rule.description', label: 'Description' },
-    { field: 'rule.level', label: 'Level' },
-    { field: 'rule.id', label: 'Rule ID' },
+    { field: 'agent.id', label: i18n.translate('public.components.visualize.severity.alerts.table.agent.id', {
+        defaultMessage: 'Agent',
+      }) },
+    { field: 'agent.name', label: i18n.translate('public.components.visualize.severity.alerts.table.agent.name', {
+        defaultMessage: 'Agent Name',
+      }) },
+    { field: 'rule.mitre.id', label: i18n.translate('public.components.visualize.severity.alerts.table.id', {
+        defaultMessage: 'Technique(s)',
+      }) },
+    { field: 'rule.mitre.tactic', label: i18n.translate('public.components.visualize.severity.alerts.table.tactic', {
+        defaultMessage: 'Tactic(s)',
+      }) },
+    { field: 'rule.description', label: i18n.translate('public.components.visualize.severity.alerts.table.description', {
+        defaultMessage: 'Description',
+      }) },
+    { field: 'rule.level', label: i18n.translate('public.components.visualize.severity.alerts.table.level', {
+        defaultMessage: 'Level',
+      }) },
+    { field: 'rule.id', label: i18n.translate('public.components.visualize.severity.alerts.table.rule.id', {
+        defaultMessage: 'Rule ID',
+      }) },
   ],
   initialAgentColumns = [
     { field: 'icon' },

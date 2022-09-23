@@ -1,9 +1,7 @@
 {
   "paths": {
-    "common": "common",
-    "public.controllers": "public/controllers/",
-    "public.components": "public/components/"
-
+    "public.components": "public/components/",
+    "public.controllers": "public/controllers/"
   },
   "exclude": [
   ],

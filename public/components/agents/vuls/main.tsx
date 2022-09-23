@@ -16,7 +16,7 @@ export const MainVuls = compose(
   withGuard(
     (props) => !((props.currentAgentData && props.currentAgentData.id) && props.agent),
     () => (
-      <PromptNoSelectedAgent body="You need to select an agent to see it's vulnerabilities." />
+      <PromptNoSelectedAgent body="您需要选择一个主机来查看其漏洞。" />
     )
   ),
   withUserAuthorizationPrompt((props) => {

@@ -10,27 +10,21 @@
  * Find more information about this on the LICENSE file.
  */
 
-import React, { Component } from 'react';
-import {
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiBasicTable,
-  Direction,
-  EuiOverlayMask,
-  EuiOutsideClickDetector,
-} from '@elastic/eui';
-import { WzRequest } from '../../../../react-services/wz-request';
-import { FlyoutDetail } from './flyout';
-import { filtersToObject, IFilter } from '../../../wz-search-bar';
-import { formatUIDate } from '../../../../react-services/time-service';
+import React, {Component} from 'react';
+import {Direction, EuiBasicTable, EuiFlexGroup, EuiFlexItem,} from '@elastic/eui';
+import {WzRequest} from '../../../../react-services/wz-request';
+import {FlyoutDetail} from './flyout';
+import {filtersToObject, IFilter} from '../../../wz-search-bar';
+import {formatUIDate} from '../../../../react-services/time-service';
 import {
   UI_ERROR_SEVERITIES,
   UIErrorLog,
   UIErrorSeverity,
   UILogLevel,
 } from '../../../../react-services/error-orchestrator/types';
-import { UI_LOGGER_LEVELS } from '../../../../../common/constants';
-import { getErrorOrchestrator } from '../../../../react-services/common-services';
+import {UI_LOGGER_LEVELS} from '../../../../../common/constants';
+import {getErrorOrchestrator} from '../../../../react-services/common-services';
+import {i18n} from '@kbn/i18n';
 
 export class InventoryTable extends Component {
   state: {
@@ -79,7 +73,7 @@ export class InventoryTable extends Component {
   async componentDidMount() {
     const regex = new RegExp('file=' + '[^&]*');
     const match = window.location.href.match(regex);
-    this.setState({ totalItems: this.props.totalItems });
+    this.setState({totalItems: this.props.totalItems});
     if (match && match[0]) {
       const file = match[0].split('=')[1];
       this.showFlyout(decodeURIComponent(file), true);
@@ -87,7 +81,7 @@ export class InventoryTable extends Component {
   }
 
   closeFlyout() {
-    this.setState({ isFlyoutVisible: false, currentFile: {} });
+    this.setState({isFlyoutVisible: false, currentFile: {}});
   }
 
   async showFlyout(file, item, redirect = false) {
@@ -107,15 +101,15 @@ export class InventoryTable extends Component {
     }
     if (!redirect) window.location.href = window.location.href += `&file=${file}`;
     //if a flyout is opened, we close it and open a new one, so the components are correctly updated on start.
-    this.setState({ isFlyoutVisible: false }, () =>
-      this.setState({ isFlyoutVisible: true, currentFile: file, syscheckItem: item })
+    this.setState({isFlyoutVisible: false}, () =>
+      this.setState({isFlyoutVisible: true, currentFile: file, syscheckItem: item})
     );
   }
 
   async componentDidUpdate(prevProps) {
-    const { filters } = this.props;
+    const {filters} = this.props;
     if (JSON.stringify(filters) !== JSON.stringify(prevProps.filters)) {
-      this.setState({ pageIndex: 0, isLoading: true }, this.getSyscheck);
+      this.setState({pageIndex: 0, isLoading: true}, this.getSyscheck);
     }
   }
 
@@ -137,7 +131,7 @@ export class InventoryTable extends Component {
         error: undefined,
       });
     } catch (error) {
-      this.setState({ error, isLoading: false });
+      this.setState({error, isLoading: false});
       const options: UIErrorLog = {
         context: `${InventoryTable.name}.getSyscheck`,
         level: UI_LOGGER_LEVELS.ERROR as UILogLevel,
@@ -153,7 +147,7 @@ export class InventoryTable extends Component {
   }
 
   buildSortFilter() {
-    const { sortField, sortDirection } = this.state;
+    const {sortField, sortDirection} = this.state;
 
     const field = sortField === 'os_name' ? '' : sortField;
     const direction = sortDirection === 'asc' ? '+' : '-';
@@ -162,7 +156,7 @@ export class InventoryTable extends Component {
   }
 
   buildFilter() {
-    const { pageIndex, pageSize } = this.state;
+    const {pageIndex, pageSize} = this.state;
     const filters = filtersToObject(this.props.filters);
     const filter = {
       ...filters,
@@ -174,9 +168,9 @@ export class InventoryTable extends Component {
     return filter;
   }
 
-  onTableChange = ({ page = {}, sort = {} }) => {
-    const { index: pageIndex, size: pageSize } = page;
-    const { field: sortField, direction: sortDirection } = sort;
+  onTableChange = ({page = {}, sort = {}}) => {
+    const {index: pageIndex, size: pageSize} = page;
+    const {field: sortField, direction: sortDirection} = sort;
     this.setState(
       {
         pageIndex,
@@ -197,48 +191,62 @@ export class InventoryTable extends Component {
     return [
       {
         field: 'file',
-        name: 'File',
+        name: i18n.translate('public.components.agent.fim.inventory.table.file', {
+          defaultMessage: 'File',
+        }),
         sortable: true,
         width: '250px',
       },
       {
         field: 'mtime',
-        name: 'Last Modified',
+        name: i18n.translate('public.components.agent.fim.inventory.table.mtime', {
+          defaultMessage: 'Last Modified',
+        }),
         sortable: true,
         width: '100px',
         render: formatUIDate,
       },
       {
         field: 'uname',
-        name: 'User',
+        name: i18n.translate('public.components.agent.fim.inventory.table.uname', {
+          defaultMessage: 'User',
+        }),
         sortable: true,
         truncateText: true,
         width: `${width}`,
       },
       {
         field: 'uid',
-        name: 'User ID',
+        name: i18n.translate('public.components.agent.fim.inventory.table.uid', {
+          defaultMessage: 'User ID',
+        }),
         sortable: true,
         truncateText: true,
         width: `${width}`,
       },
       {
         field: 'gname',
-        name: 'Group',
+        name: i18n.translate('public.components.agent.fim.inventory.table.gname', {
+          defaultMessage: 'Group',
+        }),
         sortable: true,
         truncateText: true,
         width: `${width}`,
       },
       {
         field: 'gid',
-        name: 'Group ID',
+        name: i18n.translate('public.components.agent.fim.inventory.table.gid', {
+          defaultMessage: 'Group ID',
+        }),
         sortable: true,
         truncateText: true,
         width: `${width}`,
       },
       {
         field: 'size',
-        name: 'Size',
+        name: i18n.translate('public.components.agent.fim.inventory.table.size', {
+          defaultMessage: 'Size',
+        }),
         sortable: true,
         width: `${width}`,
       },
@@ -247,7 +255,7 @@ export class InventoryTable extends Component {
 
   renderFilesTable() {
     const getRowProps = (item) => {
-      const { file } = item;
+      const {file} = item;
       return {
         'data-test-subj': `row-${file}`,
         onClick: () => this.showFlyout(file, item),

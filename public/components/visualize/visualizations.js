@@ -9,6 +9,7 @@
  *
  * Find more information about this on the LICENSE file.
  */
+import {i18n} from '@kbn/i18n';
 
 export const visualizations = {
   general: {
@@ -17,12 +18,16 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Alert level evolution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-General-Alert-level-evolution', {
+              defaultMessage: 'Alert level evolution',
+            }),
             id: 'Wazuh-App-Overview-General-Alert-level-evolution',
             width: 60
           },
           {
-            title: 'Top MITRE ATT&CKS',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-General-Alerts-Top-Mitre', {
+              defaultMessage: 'Top MITRE ATT&CKS',
+            }),
             id: 'Wazuh-App-Overview-General-Alerts-Top-Mitre',
             width: 40
           }
@@ -32,12 +37,16 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Top 5 agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-General-Top-5-agents', {
+              defaultMessage: 'Top 5 agents',
+            }),
             id: 'Wazuh-App-Overview-General-Top-5-agents',
             width: 30
           },
           {
-            title: 'Alerts evolution - Top 5 agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents', {
+              defaultMessage: 'Alerts evolution - Top 5 agents',
+            }),
             id: 'Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents',
             width: 70
           },
@@ -47,7 +56,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-General-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-General-Alerts-summary'
           }
         ]
@@ -60,7 +71,9 @@ export const visualizations = {
         height: 400,
         vis: [
           {
-            title: 'Alerts by action over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Agents-FIM-Alerts-by-action-over-time', {
+              defaultMessage: 'Alerts by action over time',
+            }),
             id: 'Wazuh-App-Agents-FIM-Alerts-by-action-over-time'
           }
         ]
@@ -69,12 +82,16 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Top 5 agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-FIM-Top-5-agents-pie', {
+              defaultMessage: 'Top 5 agents',
+            }),
             id: 'Wazuh-App-Overview-FIM-Top-5-agents-pie',
             width: 30
           },
           {
-            title: 'Events summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-FIM-Events-summary', {
+              defaultMessage: 'Events summary',
+            }),
             id: 'Wazuh-App-Overview-FIM-Events-summary',
             width: 70
           }
@@ -84,17 +101,23 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Rule distribution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-FIM-Top-5-rules', {
+              defaultMessage: 'Rule distribution',
+            }),
             id: 'Wazuh-App-Overview-FIM-Top-5-rules',
             width: 33
           },
           {
-            title: 'Actions',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-FIM-Common-actions', {
+              defaultMessage: 'Actions',
+            }),
             id: 'Wazuh-App-Overview-FIM-Common-actions',
             width: 33
           },
           {
-            title: 'Top 5 users',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-FIM-top-agents-user', {
+              defaultMessage: 'Top 5 users',
+            }),
             id: 'Wazuh-App-Overview-FIM-top-agents-user',
             width: 34
           }
@@ -104,7 +127,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-FIM-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-FIM-Alerts-summary'
           }
         ]
@@ -117,17 +142,23 @@ export const visualizations = {
         height: 320,
         vis: [
           {
-            title: 'Events by severity over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-Rule-Level-Histogram', {
+              defaultMessage: 'Events by severity over time',
+            }),
             id: 'Wazuh-App-Overview-Office-Rule-Level-Histogram',
             width: 40
           },
           {
-            title: 'IP by Users',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-IPs-By-User-Barchart', {
+              defaultMessage: 'IP by Users',
+            }),
             id: 'Wazuh-App-Overview-Office-IPs-By-User-Barchart',
             width: 30
           },
           {
-            title: 'Top Users By Subscription',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-Top-Users-By-Subscription-Barchart', {
+              defaultMessage: 'Top Users By Subscription',
+            }),
             id: 'Wazuh-App-Overview-Office-Top-Users-By-Subscription-Barchart',
             width: 30
           },
@@ -137,17 +168,23 @@ export const visualizations = {
         height: 350,
         vis: [
           {
-            title: 'Users by Operation Result',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-User-By-Operation-Result', {
+              defaultMessage: 'Users by Operation Result',
+            }),
             id: 'Wazuh-App-Overview-Office-User-By-Operation-Result',
             width: 35
           },
           {
-            title: 'Severity by User',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-Severity-By-User-Barchart', {
+              defaultMessage: 'Severity by User',
+            }),
             id: 'Wazuh-App-Overview-Office-Severity-By-User-Barchart',
             width: 30
           },
           {
-            title: 'Rule Description by Level',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-Rule-Description-Level-Table', {
+              defaultMessage: 'Rule Description by Level',
+            }),
             id: 'Wazuh-App-Overview-Office-Rule-Description-Level-Table',
             width: 35
           },
@@ -157,7 +194,9 @@ export const visualizations = {
         height: 570,
         vis: [
           {
-            title: 'Geolocation map',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-Location', {
+              defaultMessage: 'Geolocation map',
+            }),
             id: 'Wazuh-App-Overview-Office-Location'
           }
         ]
@@ -166,7 +205,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Office-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-Office-Alerts-summary'
           }
         ]
@@ -179,22 +220,30 @@ export const visualizations = {
         height: 250,
         vis: [
           {
-            title: 'Sources',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Top-sources', {
+              defaultMessage: 'Sources',
+            }),
             id: 'Wazuh-App-Overview-AWS-Top-sources',
             width: 25
           },
           {
-            title: 'Accounts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Top-accounts', {
+              defaultMessage: 'Accounts',
+            }),
             id: 'Wazuh-App-Overview-AWS-Top-accounts',
             width: 25
           },
           {
-            title: 'S3 buckets',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Top-buckets', {
+              defaultMessage: 'S3 buckets',
+            }),
             id: 'Wazuh-App-Overview-AWS-Top-buckets',
             width: 25
           },
           {
-            title: 'Regions',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Top-regions', {
+              defaultMessage: 'Regions',
+            }),
             id: 'Wazuh-App-Overview-AWS-Top-regions',
             width: 25
           }
@@ -204,12 +253,16 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Events by source over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Events-by-source', {
+              defaultMessage: 'Events by source over time',
+            }),
             id: 'Wazuh-App-Overview-AWS-Events-by-source',
             width: 50
           },
           {
-            title: 'Events by S3 bucket over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Events-by-s3-bucket', {
+              defaultMessage: 'Events by S3 bucket over time',
+            }),
             id: 'Wazuh-App-Overview-AWS-Events-by-s3-bucket',
             width: 50
           }
@@ -219,7 +272,9 @@ export const visualizations = {
         height: 570,
         vis: [
           {
-            title: 'Geolocation map',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-geo', {
+              defaultMessage: 'Geolocation map',
+            }),
             id: 'Wazuh-App-Overview-AWS-geo'
           }
         ]
@@ -228,7 +283,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-AWS-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-AWS-Alerts-summary'
           }
         ]
@@ -241,7 +298,9 @@ export const visualizations = {
         height: 250,
         vis: [
           {
-            title: 'Events over time by auth answer',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GCP-Alerts-Evolution-By-AuthAnswer', {
+              defaultMessage: 'Events over time by auth answer',
+            }),
             id: 'Wazuh-App-Overview-GCP-Alerts-Evolution-By-AuthAnswer',
             width: 100
           }
@@ -251,17 +310,23 @@ export const visualizations = {
         height: 250,
         vis: [
           {
-            title: 'Top instances by response code',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GCP-Top-vmInstances-By-ResponseCode', {
+              defaultMessage: 'Top instances by response code',
+            }),
             id: 'Wazuh-App-Overview-GCP-Top-vmInstances-By-ResponseCode',
             width: 25
           },
           {
-            title: 'Resource type by project id',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GCP-Top-ResourceType-By-Project-Id', {
+              defaultMessage: 'Resource type by project id',
+            }),
             id: 'Wazuh-App-Overview-GCP-Top-ResourceType-By-Project-Id',
             width: 50
           },
           {
-            title: 'Top project id by sourcetype',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GCP-Top-ProjectId-By-SourceType', {
+              defaultMessage: 'Top project id by sourcetype',
+            }),
             id: 'Wazuh-App-Overview-GCP-Top-ProjectId-By-SourceType',
             width: 25
           },
@@ -271,7 +336,9 @@ export const visualizations = {
         height: 450,
         vis: [
           {
-            title: 'Top 5 Map by source ip',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GCP-Map-By-SourceIp', {
+              defaultMessage: 'Top 5 Map by source ip',
+            }),
             id: 'Wazuh-App-Overview-GCP-Map-By-SourceIp',
             width: 100
           },
@@ -281,7 +348,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GCP-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-GCP-Alerts-summary'
           }
         ]
@@ -294,12 +363,16 @@ export const visualizations = {
         height: 400,
         vis: [
           {
-            title: 'PCI DSS requirements',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PCI-DSS-requirements', {
+              defaultMessage: 'PCI DSS requirements',
+            }),
             id: 'Wazuh-App-Overview-PCI-DSS-requirements',
             width: 50
           },
           {
-            title: 'Top 10 agents by alerts number',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PCI-DSS-Agents', {
+              defaultMessage: 'Top 10 agents by alerts number',
+            }),
             id: 'Wazuh-App-Overview-PCI-DSS-Agents',
             width: 50
           }
@@ -309,7 +382,9 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Top requirements over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PCI-DSS-Requirements-over-time', {
+              defaultMessage: 'Top requirements over time',
+            }),
             id: 'Wazuh-App-Overview-PCI-DSS-Requirements-over-time'
           }
         ]
@@ -318,7 +393,9 @@ export const visualizations = {
         height: 530,
         vis: [
           {
-            title: 'Last alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PCI-DSS-Requirements-Agents-heatmap', {
+              defaultMessage: 'Last alerts',
+            }),
             id: 'Wazuh-App-Overview-PCI-DSS-Requirements-Agents-heatmap'
           }
         ]
@@ -327,7 +404,9 @@ export const visualizations = {
         height: 255,
         vis: [
           {
-            title: 'Requirements by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PCI-DSS-Requirements-by-agent', {
+              defaultMessage: 'Requirements by agent',
+            }),
             id: 'Wazuh-App-Overview-PCI-DSS-Requirements-by-agent'
           }
         ]
@@ -336,7 +415,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PCI-DSS-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-PCI-DSS-Alerts-summary'
           }
         ]
@@ -349,12 +430,16 @@ export const visualizations = {
         height: 400,
         vis: [
           {
-            title: 'Top 10 agents by alerts number',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GDPR-Agents', {
+              defaultMessage: 'Top 10 agents by alerts number',
+            }),
             id: 'Wazuh-App-Overview-GDPR-Agents',
             width: 30
           },
           {
-            title: 'GDPR requirements',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GDPR-requirements', {
+              defaultMessage: 'GDPR requirements',
+            }),
             id: 'Wazuh-App-Overview-GDPR-requirements',
             width: 70
           }
@@ -364,7 +449,9 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Top requirements over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GDPR-Requirements-heatmap', {
+              defaultMessage: 'Top requirements over time',
+            }),
             id: 'Wazuh-App-Overview-GDPR-Requirements-heatmap'
           }
         ]
@@ -373,7 +460,9 @@ export const visualizations = {
         height: 530,
         vis: [
           {
-            title: 'Last alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GDPR-Requirements-Agents-heatmap', {
+              defaultMessage: 'Last alerts',
+            }),
             id: 'Wazuh-App-Overview-GDPR-Requirements-Agents-heatmap'
           }
         ]
@@ -382,7 +471,9 @@ export const visualizations = {
         height: 255,
         vis: [
           {
-            title: 'Requirements by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GDPR-Requirements-by-agent', {
+              defaultMessage: 'Requirements by agent',
+            }),
             id: 'Wazuh-App-Overview-GDPR-Requirements-by-agent'
           }
         ]
@@ -391,7 +482,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GDPR-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-GDPR-Alerts-summary'
           }
         ]
@@ -404,17 +497,23 @@ export const visualizations = {
         height: 400,
         vis: [
           {
-            title: 'Most active agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-Agents', {
+              defaultMessage: 'Most active agents',
+            }),
             id: 'Wazuh-App-Overview-NIST-Agents',
             width: 20
           },
           {
-            title: 'Top requirements over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-Requirements-over-time', {
+              defaultMessage: 'Top requirements over time',
+            }),
             id: 'Wazuh-App-Overview-NIST-Requirements-over-time',
             width: 50
           },
           {
-            title: 'Requiments distribution by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-requirements-by-agents', {
+              defaultMessage: 'Requiments distribution by agent',
+            }),
             id: 'Wazuh-App-Overview-NIST-requirements-by-agents',
             width: 30
           }
@@ -424,17 +523,23 @@ export const visualizations = {
         height: 350,
         vis: [
           {
-            title: 'Alerts volume by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-Requirements-Agents-heatmap', {
+              defaultMessage: 'Alerts volume by agent',
+            }),
             id: 'Wazuh-App-Overview-NIST-Requirements-Agents-heatmap',
             width: 50
           },
           {
-            title: 'Stats',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-Metrics', {
+              defaultMessage: 'Stats',
+            }),
             id: 'Wazuh-App-Overview-NIST-Metrics',
             width: 20
           },
           {
-            title: 'Top 10 requirements',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-Top-10-requirements', {
+              defaultMessage: 'Top 10 requirements',
+            }),
             id: 'Wazuh-App-Overview-NIST-Top-10-requirements',
             width: 30
           }
@@ -444,7 +549,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-NIST-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-NIST-Alerts-summary'
           }
         ]
@@ -457,12 +564,16 @@ export const visualizations = {
         height: 400,
         vis: [
           {
-            title: 'TSC requirements',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-TSC-requirements', {
+              defaultMessage: 'TSC requirements',
+            }),
             id: 'Wazuh-App-Overview-TSC-requirements',
             width: 50
           },
           {
-            title: 'Top 10 agents by alerts number',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-TSC-Agents', {
+              defaultMessage: 'Top 10 agents by alerts number',
+            }),
             id: 'Wazuh-App-Overview-TSC-Agents',
             width: 50
           }
@@ -472,7 +583,9 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Top requirements over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-TSC-Requirements-over-time', {
+              defaultMessage: 'Top requirements over time',
+            }),
             id: 'Wazuh-App-Overview-TSC-Requirements-over-time'
           }
         ]
@@ -481,7 +594,9 @@ export const visualizations = {
         height: 530,
         vis: [
           {
-            title: 'Last alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-TSC-Requirements-Agents-heatmap', {
+              defaultMessage: 'Last alerts',
+            }),
             id: 'Wazuh-App-Overview-TSC-Requirements-Agents-heatmap'
           }
         ]
@@ -490,7 +605,9 @@ export const visualizations = {
         height: 255,
         vis: [
           {
-            title: 'Requirements by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-TSC-Requirements-by-agent', {
+              defaultMessage: 'Requirements by agent',
+            }),
             id: 'Wazuh-App-Overview-TSC-Requirements-by-agent'
           }
         ]
@@ -499,7 +616,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-TSC-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-TSC-Alerts-summary'
           }
         ]
@@ -512,7 +631,9 @@ export const visualizations = {
         height: 570,
         vis: [
           {
-            title: 'Alerts volume by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Heatmap', {
+              defaultMessage: 'Alerts volume by agent',
+            }),
             id: 'Wazuh-App-Overview-HIPAA-Heatmap',
             width: 50
           },
@@ -524,12 +645,16 @@ export const visualizations = {
                 height: 285,
                 vis: [
                   {
-                    title: 'Most common alerts',
+                    title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Tag-cloud', {
+                      defaultMessage: 'Most common alerts',
+                    }),
                     id: 'Wazuh-App-Overview-HIPAA-Tag-cloud',
                     width: 50
                   },
                   {
-                    title: 'Top 10 requirements',
+                    title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Top-10-requirements', {
+                      defaultMessage: 'Top 10 requirements',
+                    }),
                     id: 'Wazuh-App-Overview-HIPAA-Top-10-requirements',
                     width: 50
                   }
@@ -540,12 +665,16 @@ export const visualizations = {
                 noMargin: true,
                 vis: [
                   {
-                    title: 'Most active agents',
+                    title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Top-10-agents', {
+                      defaultMessage: 'Most active agents',
+                    }),
                     id: 'Wazuh-App-Overview-HIPAA-Top-10-agents',
                     width: 50
                   },
                   {
-                    title: 'Stats',
+                    title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Metrics', {
+                      defaultMessage: 'Stats',
+                    }),
                     id: 'Wazuh-App-Overview-HIPAA-Metrics',
                     width: 50
                   }
@@ -559,7 +688,9 @@ export const visualizations = {
         height: 400,
         vis: [
           {
-            title: 'Requirements evolution over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Top-requirements-over-time', {
+              defaultMessage: 'Requirements evolution over time',
+            }),
             id: 'Wazuh-App-Overview-HIPAA-Top-requirements-over-time',
             width: 50
           },
@@ -575,7 +706,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-HIPAA-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-HIPAA-Alerts-summary'
           }
         ]
@@ -588,12 +721,16 @@ export const visualizations = {
         height: 330,
         vis: [
           {
-            title: 'Most affected agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-Most-affected-agents', {
+              defaultMessage: 'Most affected agents',
+            }),
             id: 'Wazuh-App-Overview-vuls-Most-affected-agents',
             width: 30
           },
           {
-            title: 'Alerts severity',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-Alerts-severity', {
+              defaultMessage: 'Alerts severity',
+            }),
             id: 'Wazuh-App-Overview-vuls-Alerts-severity',
             width: 70
           }
@@ -603,17 +740,23 @@ export const visualizations = {
         height: 330,
         vis: [
           {
-            title: 'Most common CVEs',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-Most-common-CVEs', {
+              defaultMessage: 'Most common CVEs',
+            }),
             id: 'Wazuh-App-Overview-vuls-Most-common-CVEs',
             width: 30
           },
           {
-            title: 'TOP affected packages alerts Evolution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-Vulnerability-evolution-affected-packages', {
+              defaultMessage: 'TOP affected packages alerts Evolution',
+            }),
             id: 'Wazuh-App-Overview-vuls-Vulnerability-evolution-affected-packages',
             width: 40
           },
           {
-            title: 'Most common CWEs',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-Most-common-CWEs', {
+              defaultMessage: 'Most common CWEs',
+            }),
             id: 'Wazuh-App-Overview-vuls-Most-common-CWEs',
             width: 30
           }
@@ -621,14 +764,18 @@ export const visualizations = {
       },
       {
         height: 450,
-        vis: [
+        vis: [
           {
-            title: 'Top affected packages by CVEs',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-packages-CVEs', {
+              defaultMessage: 'Top affected packages by CVEs',
+            }),
             id: 'Wazuh-App-Overview-vuls-packages-CVEs',
             width: 50
           },
           {
-            title: 'Agents by severity',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-agents-severities', {
+              defaultMessage: 'Agents by severity',
+            }),
             id: 'Wazuh-App-Overview-vuls-agents-severities',
             width: 50
           }
@@ -638,7 +785,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alert summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-vuls-Alert-summary', {
+              defaultMessage: 'Alert summary',
+            }),
             id: 'Wazuh-App-Overview-vuls-Alert-summary'
           }
         ]
@@ -651,12 +800,16 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Unique malicious files per agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Virustotal-Malicious-Per-Agent', {
+              defaultMessage: 'Unique malicious files per agent',
+            }),
             id: 'Wazuh-App-Overview-Virustotal-Malicious-Per-Agent',
             width: 50
           },
           {
-            title: 'Last scanned files',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Virustotal-Last-Files-Pie', {
+              defaultMessage: 'Last scanned files',
+            }),
             id: 'Wazuh-App-Overview-Virustotal-Last-Files-Pie',
             width: 50
           }
@@ -666,7 +819,9 @@ export const visualizations = {
         height: 550,
         vis: [
           {
-            title: 'Alerts evolution by agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Virustotal-Alerts-Evolution', {
+              defaultMessage: 'Alerts evolution by agents',
+            }),
             id: 'Wazuh-App-Overview-Virustotal-Alerts-Evolution'
           }
         ]
@@ -675,7 +830,9 @@ export const visualizations = {
         height: 250,
         vis: [
           {
-            title: 'Malicious files alerts evolution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Virustotal-Malicious-Evolution', {
+              defaultMessage: 'Malicious files alerts evolution',
+            }),
             id: 'Wazuh-App-Overview-Virustotal-Malicious-Evolution'
           }
         ]
@@ -684,7 +841,9 @@ export const visualizations = {
         height: 570,
         vis: [
           {
-            title: 'Last files',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Virustotal-Files-Table', {
+              defaultMessage: 'Last files',
+            }),
             id: 'Wazuh-App-Overview-Virustotal-Files-Table'
           }
         ]
@@ -693,7 +852,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Virustotal-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-Virustotal-Alerts-summary'
           }
         ]
@@ -706,17 +867,23 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Top 5 Osquery events added',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Osquery-Top-5-added', {
+              defaultMessage: 'Top 5 Osquery events added',
+            }),
             id: 'Wazuh-App-Overview-Osquery-Top-5-added',
             width: 25
           },
           {
-            title: 'Top 5 Osquery events removed',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Osquery-Top-5-removed', {
+              defaultMessage: 'Top 5 Osquery events removed',
+            }),
             id: 'Wazuh-App-Overview-Osquery-Top-5-removed',
             width: 25
           },
           {
-            title: 'Evolution of Osquery events per pack over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Agents-Osquery-Evolution', {
+              defaultMessage: 'Evolution of Osquery events per pack over time',
+            }),
             id: 'Wazuh-App-Agents-Osquery-Evolution',
             width: 50
           }
@@ -726,12 +893,16 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Most common packs',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Osquery-Most-common-packs', {
+              defaultMessage: 'Most common packs',
+            }),
             id: 'Wazuh-App-Overview-Osquery-Most-common-packs',
             width: 30
           },
           {
-            title: 'Top 5 rules',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Osquery-Top-5-rules', {
+              defaultMessage: 'Top 5 rules',
+            }),
             id: 'Wazuh-App-Overview-Osquery-Top-5-rules',
             width: 70
           }
@@ -741,7 +912,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Osquery-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-Osquery-Alerts-summary'
           }
         ]
@@ -754,12 +927,16 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Alerts evolution over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-MITRE-Alerts-Evolution', {
+              defaultMessage: 'Alerts evolution over time',
+            }),
             id: 'Wazuh-App-Overview-MITRE-Alerts-Evolution',
             width: 75
           },
           {
-            title: 'Top tactics',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-MITRE-Top-Tactics', {
+              defaultMessage: 'Top tactics',
+            }),
             id: 'Wazuh-App-Overview-MITRE-Top-Tactics',
             width: 25
           }
@@ -769,17 +946,23 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Attacks by technique',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-MITRE-Attacks-By-Technique', {
+              defaultMessage: 'Attacks by technique',
+            }),
             id: 'Wazuh-App-Overview-MITRE-Attacks-By-Technique',
             width: 33
           },
           {
-            title: 'Top tactics by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-MITRE-Top-Tactics-By-Agent', {
+              defaultMessage: 'Top tactics by agent',
+            }),
             id: 'Wazuh-App-Overview-MITRE-Top-Tactics-By-Agent',
             width: 34
           },
           {
-            title: 'Mitre techniques by agent',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-MITRE-Attacks-By-Agent', {
+              defaultMessage: 'Mitre techniques by agent',
+            }),
             id: 'Wazuh-App-Overview-MITRE-Attacks-By-Agent',
             width: 33
           }
@@ -789,7 +972,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-MITRE-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-MITRE-Alerts-summary'
           }
         ]
@@ -802,17 +987,23 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Top 5 images',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Docker-top-5-images', {
+              defaultMessage: 'Top 5 images',
+            }),
             id: 'Wazuh-App-Overview-Docker-top-5-images',
             width: 25
           },
           {
-            title: 'Top 5 events',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Docker-top-5-actions', {
+              defaultMessage: 'Top 5 events',
+            }),
             id: 'Wazuh-App-Overview-Docker-top-5-actions',
             width: 25
           },
           {
-            title: 'Resources usage over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Docker-Types-over-time', {
+              defaultMessage: 'Resources usage over time',
+            }),
             id: 'Wazuh-App-Overview-Docker-Types-over-time',
             width: 50
           }
@@ -822,7 +1013,9 @@ export const visualizations = {
         height: 300,
         vis: [
           {
-            title: 'Events occurred evolution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Docker-Actions-over-time', {
+              defaultMessage: 'Events occurred evolution',
+            }),
             id: 'Wazuh-App-Overview-Docker-Actions-over-time'
           }
         ]
@@ -831,7 +1024,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Docker-Events-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-Docker-Events-summary'
           }
         ]
@@ -844,22 +1039,30 @@ export const visualizations = {
         height: 215,
         vis: [
           {
-            title: 'Top 5 Agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Agents', {
+              defaultMessage: 'Top 5 Agents',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Agents',
             width: 25
           },
           {
-            title: 'Top 5 Profiles',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Profiles', {
+              defaultMessage: 'Top 5 Profiles',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Profiles',
             width: 25
           },
           {
-            title: 'Top 5 Content',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Content', {
+              defaultMessage: 'Top 5 Content',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Content',
             width: 25
           },
           {
-            title: 'Top 5 Severity',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Severity', {
+              defaultMessage: 'Top 5 Severity',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Severity',
             width: 25
           }
@@ -869,7 +1072,9 @@ export const visualizations = {
         height: 240,
         vis: [
           {
-            title: 'Top 5 Agents - Severity high',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Top-5-agents-Severity-high', {
+              defaultMessage: 'Top 5 Agents - Severity high',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Top-5-agents-Severity-high'
           }
         ]
@@ -878,12 +1083,16 @@ export const visualizations = {
         height: 320,
         vis: [
           {
-            title: 'Top 10 - Alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Top-10-alerts', {
+              defaultMessage: 'Top 10 - Alerts',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Top-10-alerts',
             width: 50
           },
           {
-            title: 'Top 10 - High risk alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Top-10-high-risk-alerts', {
+              defaultMessage: 'Top 10 - High risk alerts',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Top-10-high-risk-alerts',
             width: 50
           }
@@ -893,7 +1102,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-OSCAP-Last-alerts', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-OSCAP-Last-alerts'
           }
         ]
@@ -906,12 +1117,16 @@ export const visualizations = {
         height: 320,
         vis: [
           {
-            title: 'Top 5 CIS-CAT groups',
+            title: i18n.translate('public.components.visualize.Wazuh-app-Overview-CISCAT-top-5-groups', {
+              defaultMessage: 'Top 5 CIS-CAT groups',
+            }),
             id: 'Wazuh-app-Overview-CISCAT-top-5-groups',
             width: 60
           },
           {
-            title: 'Scan result evolution',
+            title: i18n.translate('public.components.visualize.Wazuh-app-Overview-CISCAT-scan-result-evolution', {
+              defaultMessage: 'Scan result evolution',
+            }),
             id: 'Wazuh-app-Overview-CISCAT-scan-result-evolution',
             width: 40
           }
@@ -921,7 +1136,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-app-Overview-CISCAT-alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-app-Overview-CISCAT-alerts-summary'
           }
         ]
@@ -934,17 +1151,23 @@ export const visualizations = {
         height: 290,
         vis: [
           {
-            title: 'Events over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PM-Events-over-time', {
+              defaultMessage: 'Events over time',
+            }),
             id: 'Wazuh-App-Overview-PM-Events-over-time',
             width: 50
           },
           {
-            title: 'Rule distribution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PM-Top-5-rules', {
+              defaultMessage: 'Rule distribution',
+            }),
             id: 'Wazuh-App-Overview-PM-Top-5-rules',
             width: 25
           },
           {
-            title: 'Top 5 agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PM-Top-5-agents-pie', {
+              defaultMessage: 'Top 5 agents',
+            }),
             id: 'Wazuh-App-Overview-PM-Top-5-agents-pie',
             width: 25
           }
@@ -954,7 +1177,9 @@ export const visualizations = {
         height: 240,
         vis: [
           {
-            title: 'Events per control type evolution',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PM-Events-per-agent-evolution', {
+              defaultMessage: 'Events per control type evolution',
+            }),
             id: 'Wazuh-App-Overview-PM-Events-per-agent-evolution'
           }
         ]
@@ -963,7 +1188,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-PM-Alerts-summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-PM-Alerts-summary'
           }
         ]
@@ -976,22 +1203,30 @@ export const visualizations = {
         height: 250,
         vis: [
           {
-            title: 'Groups',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Audit-Groups', {
+              defaultMessage: 'Groups',
+            }),
             id: 'Wazuh-App-Overview-Audit-Groups',
             width: 25
           },
           {
-            title: 'Agents',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Audit-Agents', {
+              defaultMessage: 'Agents',
+            }),
             id: 'Wazuh-App-Overview-Audit-Agents',
             width: 25
           },
           {
-            title: 'Commands',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Audit-Commands', {
+              defaultMessage: 'Commands',
+            }),
             id: 'Wazuh-App-Overview-Audit-Commands',
             width: 25
           },
           {
-            title: 'Files',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Audit-Files', {
+              defaultMessage: 'Files',
+            }),
             id: 'Wazuh-App-Overview-Audit-Files',
             width: 25
           }
@@ -1001,7 +1236,9 @@ export const visualizations = {
         height: 310,
         vis: [
           {
-            title: 'Alerts over time',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Audit-Alerts-over-time', {
+              defaultMessage: 'Alerts over time',
+            }),
             id: 'Wazuh-App-Overview-Audit-Alerts-over-time'
           }
         ]
@@ -1010,7 +1247,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-Audit-Last-alerts', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-Audit-Last-alerts'
           }
         ]
@@ -1023,12 +1262,16 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Alerts evolution by organization',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GitHub-Alerts-Evolution-By-Organization', {
+              defaultMessage: 'Alerts evolution by organization',
+            }),
             id: 'Wazuh-App-Overview-GitHub-Alerts-Evolution-By-Organization',
             width: 60
           },
           {
-            title: 'Top 5 organizations by alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GitHub-Top-5-Organizations-By-Alerts', {
+              defaultMessage: 'Top 5 organizations by alerts',
+            }),
             id: 'Wazuh-App-Overview-GitHub-Top-5-Organizations-By-Alerts',
             width: 40
           }
@@ -1038,12 +1281,16 @@ export const visualizations = {
         height: 360,
         vis: [
           {
-            title: 'Top alerts by action type and organization',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GitHub-Alert-Action-Type-By-Organization', {
+              defaultMessage: 'Top alerts by action type and organization',
+            }),
             id: 'Wazuh-App-Overview-GitHub-Alert-Action-Type-By-Organization',
             width: 40
           },
           {
-            title: 'Users with more alerts',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GitHub-Users-With-More-Alerts', {
+              defaultMessage: 'Users with more alerts',
+            }),
             id: 'Wazuh-App-Overview-GitHub-Users-With-More-Alerts',
             width: 60
           }
@@ -1053,7 +1300,9 @@ export const visualizations = {
         hide: true,
         vis: [
           {
-            title: 'Alerts summary',
+            title: i18n.translate('public.components.visualize.Wazuh-App-Overview-GitHub-Alert-Summary', {
+              defaultMessage: 'Alerts summary',
+            }),
             id: 'Wazuh-App-Overview-GitHub-Alert-Summary',
           }
         ]

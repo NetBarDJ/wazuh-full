@@ -110,7 +110,7 @@ export class Inventory extends Component {
     let auxTabs = [
       {
         id: 'files',
-        name: `Files ${this.state.isLoading === true ? '' : '(' + this.state.totalItemsFile + ')'}`,
+        name: `文件 ${this.state.isLoading === true ? '' : '(' + this.state.totalItemsFile + ')'}`,
         disabled: false,
       },
     ]
@@ -211,7 +211,7 @@ export class Inventory extends Component {
             <EuiFlexItem />
             <EuiFlexItem grow={false}>
               <EuiButtonEmpty iconType="importAction" onClick={() => this.downloadCsv()}>
-                Export formatted
+                格式化导出
               </EuiButtonEmpty>
             </EuiFlexItem>
           </EuiFlexGroup>
@@ -227,7 +227,7 @@ export class Inventory extends Component {
           </EuiFlexItem>
           <EuiFlexItem grow={false}>
             <EuiButtonEmpty iconType="importAction" onClick={() => this.downloadCsv()}>
-              Export formatted
+              格式化导出
             </EuiButtonEmpty>
           </EuiFlexItem>
         </EuiFlexGroup>
