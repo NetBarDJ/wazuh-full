@@ -7,6 +7,7 @@ import {
 import { RIGHT_ALIGNMENT } from '@elastic/eui/lib/services';
 import { WzRequest } from '../../../react-services/wz-request';
 import { ErrorHandler } from '../../../react-services/error-handler';
+import {i18n} from '@kbn/i18n';
 
 
 
@@ -35,13 +36,13 @@ export const EditRolesTable = ({ policies, role, onChange, isDisabled, loading})
       }
 
       const { pageOfItems, totalItemCount } = getItems();
-    
+
       const toggleDetails = item => {
         const itemIdToExpandedRowMapValues = { ...itemIdToExpandedRowMap };
         if (itemIdToExpandedRowMapValues[item.id]) {
           delete itemIdToExpandedRowMapValues[item.id];
         } else {
-            
+
           const listItems = [
             {
               title: 'Actions',
@@ -65,16 +66,20 @@ export const EditRolesTable = ({ policies, role, onChange, isDisabled, loading})
       const columns = [
         {
           field: 'label',
-          name: 'Policies',
+          name: i18n.translate('public.components.security.roles.components.table.Policies', {
+        defaultMessage: 'Policies',
+      }),
           sortable: false,
           truncateText: true
         },
         {
-          name: 'Actions',
+          name: i18n.translate('public.components.security.roles.components.table.Actions', {
+        defaultMessage: 'Actions',
+      }),
           actions: [
             {
               name: 'Remove',
-              description: 'Remove',
+              description: '删除',
               type: 'icon',
               color: 'danger',
               icon: 'trash',

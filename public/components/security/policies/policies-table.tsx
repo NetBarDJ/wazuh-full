@@ -7,6 +7,7 @@ import { WzButtonModalConfirm } from '../../common/buttons';
 import { UI_LOGGER_LEVELS } from '../../../../common/constants';
 import { UI_ERROR_SEVERITIES } from '../../../react-services/error-orchestrator/types';
 import { getErrorOrchestrator } from '../../../react-services/common-services';
+import {i18n} from '@kbn/i18n';
 
 export const PoliciesTable = ({ policies, loading, editPolicy, updatePolicies }) => {
   const getRowProps = (item) => {
@@ -53,20 +54,26 @@ export const PoliciesTable = ({ policies, loading, editPolicy, updatePolicies })
   const columns = [
     {
       field: 'id',
-      name: 'ID',
+      name: i18n.translate('public.components.security.policies.components.table.id', {
+        defaultMessage: 'ID',
+      }),
       width: 75,
       sortable: true,
       truncateText: true,
     },
     {
       field: 'name',
-      name: 'Name',
+      name: i18n.translate('public.components.security.policies.components.table.name', {
+        defaultMessage: 'Name',
+      }),
       sortable: true,
       truncateText: true,
     },
     {
       field: 'policy.actions',
-      name: 'Actions',
+      name: i18n.translate('public.components.security.policies.components.table.policy.actions', {
+        defaultMessage: 'Actions',
+      }),
       sortable: true,
       render: (actions) => {
         return (actions || []).join(', ');
@@ -75,21 +82,27 @@ export const PoliciesTable = ({ policies, loading, editPolicy, updatePolicies })
     },
     {
       field: 'policy.resources',
-      name: 'Resources',
+      name: i18n.translate('public.components.security.policies.components.table.policy.resources', {
+        defaultMessage: 'Resources',
+      }),
       sortable: true,
       truncateText: true,
     },
     {
       field: 'policy.effect',
-      name: 'Effect',
+      name: i18n.translate('public.components.security.policies.components.table.policy.effect', {
+        defaultMessage: 'Effect',
+      }),
       sortable: true,
       truncateText: true,
     },
     {
       field: 'id',
-      name: 'Status',
+      name: i18n.translate('public.components.security.policies.components.table.Status', {
+        defaultMessage: 'Status',
+      }),
       render: (item) => {
-        return WzAPIUtils.isReservedID(item) && <EuiBadge color="primary">Reserved</EuiBadge>;
+        return WzAPIUtils.isReservedID(item) && <EuiBadge color="primary">默认</EuiBadge>;
       },
       width: 150,
       sortable: false,
@@ -97,19 +110,21 @@ export const PoliciesTable = ({ policies, loading, editPolicy, updatePolicies })
     {
       align: 'right',
       width: '5%',
-      name: 'Actions',
+      name: i18n.translate('public.components.security.policies.components.table.Actions', {
+        defaultMessage: 'Actions',
+      }),
       render: (item) => (
         <div onClick={(ev) => ev.stopPropagation()}>
           <WzButtonModalConfirm
             buttonType="icon"
             tooltip={{
               content: WzAPIUtils.isReservedID(item.id)
-                ? "Reserved policies can't be deleted"
-                : 'Delete policy',
+                ? "无法删除默认策略"
+                : '删除策略',
               position: 'left',
             }}
             isDisabled={WzAPIUtils.isReservedID(item.id)}
-            modalTitle={`Do you want to delete the ${item.name} policy?`}
+            modalTitle={'您确认要删除 ${item.name} 策略吗?'}
             onConfirm={confirmDeletePolicy(item)}
             modalProps={{ buttonColor: 'danger' }}
             iconType="trash"

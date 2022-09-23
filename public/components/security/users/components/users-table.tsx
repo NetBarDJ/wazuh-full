@@ -1,24 +1,25 @@
 import React from 'react';
 import {
-  EuiInMemoryTable,
   EuiBadge,
-  EuiFlexGroup,
-  EuiLoadingSpinner,
-  EuiFlexItem,
   EuiBasicTableColumn,
+  EuiFlexGroup,
+  EuiFlexItem,
+  EuiInMemoryTable,
+  EuiLoadingSpinner,
   SortDirection,
 } from '@elastic/eui';
-import { WzButtonModalConfirm } from '../../../common/buttons';
+import {WzButtonModalConfirm} from '../../../common/buttons';
 import UsersServices from '../services';
-import { ErrorHandler } from '../../../../react-services/error-handler';
-import { WzAPIUtils } from '../../../../react-services/wz-api-utils';
-import { UI_LOGGER_LEVELS } from '../../../../../common/constants';
-import { UI_ERROR_SEVERITIES } from '../../../../react-services/error-orchestrator/types';
-import { getErrorOrchestrator } from '../../../../react-services/common-services';
+import {ErrorHandler} from '../../../../react-services/error-handler';
+import {WzAPIUtils} from '../../../../react-services/wz-api-utils';
+import {UI_LOGGER_LEVELS} from '../../../../../common/constants';
+import {UI_ERROR_SEVERITIES} from '../../../../react-services/error-orchestrator/types';
+import {getErrorOrchestrator} from '../../../../react-services/common-services';
+import {i18n} from '@kbn/i18n';
 
-export const UsersTable = ({ users, editUserFlyover, rolesLoading, roles, onSave }) => {
+export const UsersTable = ({users, editUserFlyover, rolesLoading, roles, onSave}) => {
   const getRowProps = item => {
-    const { id } = item;
+    const {id} = item;
     return {
       'data-test-subj': `row-${id}`,
       onClick: () => editUserFlyover(item),
@@ -51,23 +52,29 @@ export const UsersTable = ({ users, editUserFlyover, rolesLoading, roles, onSave
   const columns: EuiBasicTableColumn<any>[] = [
     {
       field: 'username',
-      name: 'User',
+      name: i18n.translate('public.components.security.users.components.table.username', {
+        defaultMessage: 'User',
+      }),
       sortable: true,
       truncateText: true,
     },
     {
       field: 'allow_run_as',
-      name: 'Allow run as ',
+      name: i18n.translate('public.components.security.users.components.table.allow_run_as', {
+        defaultMessage: 'Allow run as ',
+      }),
       sortable: true,
       truncateText: true,
     },
     {
       field: 'roles',
-      name: 'Roles',
+      name: i18n.translate('public.components.security.users.components.table.roles', {
+        defaultMessage: 'Roles',
+      }),
       dataType: 'boolean',
       render: userRoles => {
         if (rolesLoading) {
-          return <EuiLoadingSpinner size="m" />;
+          return <EuiLoadingSpinner size="m"/>;
         }
         if (!userRoles || !userRoles.length) return <></>;
         const tmpRoles = userRoles.map((userRole, idx) => {
@@ -88,19 +95,21 @@ export const UsersTable = ({ users, editUserFlyover, rolesLoading, roles, onSave
     {
       align: 'right',
       width: '5%',
-      name: 'Actions',
+      name: i18n.translate('public.components.security.users.components.table.Actions', {
+        defaultMessage: 'Actions',
+      }),
       render: item => (
         <div onClick={ev => ev.stopPropagation()}>
           <WzButtonModalConfirm
             buttonType="icon"
             tooltip={{
-              content: WzAPIUtils.isReservedID(item.id) ? "Reserved users can't be deleted" : 'Delete user',
+              content: WzAPIUtils.isReservedID(item.id) ? "无法删除默认用户" : '删除用户',
               position: 'left',
             }}
             isDisabled={WzAPIUtils.isReservedID(item.id)}
-            modalTitle={`Do you want to delete ${item.username} user?`}
+            modalTitle={`您确认要删除 ${item.username} 用户吗?`}
             onConfirm={onConfirmDeleteUser(item)}
-            modalProps={{ buttonColor: 'danger' }}
+            modalProps={{buttonColor: 'danger'}}
             iconType="trash"
             color="danger"
             aria-label="Delete user"

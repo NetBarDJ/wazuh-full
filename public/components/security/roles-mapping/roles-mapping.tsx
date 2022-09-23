@@ -57,7 +57,7 @@ export const RolesMapping = () => {
       ErrorHandler.handle('There was an error loading roles');
     }
   }, [rolesLoading]);
-  
+
   const getInternalUsers = async () => {
     try {
       const wazuhSecurity = new WazuhSecurity();
@@ -122,7 +122,7 @@ export const RolesMapping = () => {
   const updateRoles = async () => {
     await getRules();
   };
-  
+
   let editFlyout;
   if (isEditingRule) {
     editFlyout = (
@@ -161,7 +161,7 @@ export const RolesMapping = () => {
       <EuiPageContentHeader>
         <EuiPageContentHeaderSection>
           <EuiTitle>
-            <h2>Role mapping</h2>
+            <h2>角色映射</h2>
           </EuiTitle>
         </EuiPageContentHeaderSection>
         <EuiPageContentHeaderSection>
@@ -172,7 +172,7 @@ export const RolesMapping = () => {
                   setIsCreatingRule(true);
                 }}
               >
-                Create Role mapping
+                创建新的角色映射
               </EuiButton>
               {createFlyout}
               {editFlyout}

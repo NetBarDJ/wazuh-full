@@ -16,6 +16,7 @@ import { WzAPIUtils } from '../../../react-services/wz-api-utils';
 import { UI_LOGGER_LEVELS } from '../../../../common/constants';
 import { UI_ERROR_SEVERITIES } from '../../../react-services/error-orchestrator/types';
 import { getErrorOrchestrator } from '../../../react-services/common-services';
+import {i18n} from '@kbn/i18n';
 
 export const RolesTable = ({ roles, policiesData, loading, editRole, updateRoles }) => {
   const getRowProps = (item) => {
@@ -60,21 +61,27 @@ export const RolesTable = ({ roles, policiesData, loading, editRole, updateRoles
   const columns = [
     {
       field: 'id',
-      name: 'ID',
+      name: i18n.translate('public.components.security.roles.components.table.id', {
+        defaultMessage: 'ID',
+      }),
       width: 75,
       sortable: true,
       truncateText: true,
     },
     {
       field: 'name',
-      name: 'Name',
+      name: i18n.translate('public.components.security.roles.components.table.name', {
+        defaultMessage: 'Name',
+      }),
       width: 200,
       sortable: true,
       truncateText: true,
     },
     {
       field: 'policies',
-      name: 'Policies',
+      name: i18n.translate('public.components.security.roles.components.table.Policies', {
+        defaultMessage: 'Policies',
+      }),
       render: (policies) => {
         return (
           (policiesData && (
@@ -120,9 +127,11 @@ export const RolesTable = ({ roles, policiesData, loading, editRole, updateRoles
     },
     {
       field: 'id',
-      name: 'Status',
+      name: i18n.translate('public.components.security.roles.components.table.Status', {
+        defaultMessage: 'Status',
+      }),
       render: (item) => {
-        return WzAPIUtils.isReservedID(item) && <EuiBadge color="primary">Reserved</EuiBadge>;
+        return WzAPIUtils.isReservedID(item) && <EuiBadge color="primary">默认</EuiBadge>;
       },
       width: 150,
       sortable: false,
@@ -130,19 +139,21 @@ export const RolesTable = ({ roles, policiesData, loading, editRole, updateRoles
     {
       align: 'right',
       width: '5%',
-      name: 'Actions',
+      name: i18n.translate('public.components.security.roles.components.table.Actions', {
+        defaultMessage: 'Actions',
+      }),
       render: (item) => (
         <div onClick={(ev) => ev.stopPropagation()}>
           <WzButtonModalConfirm
             buttonType="icon"
             tooltip={{
               content: WzAPIUtils.isReservedID(item.id)
-                ? "Reserved roles can't be deleted"
-                : 'Delete role',
+                ? "无法删除默认角色"
+                : '删除角色',
               position: 'left',
             }}
             isDisabled={WzAPIUtils.isReservedID(item.id)}
-            modalTitle={`Do you want to delete the ${item.name} role?`}
+            modalTitle={`您确认要删除 ${item.name} 角色吗?`}
             onConfirm={onConfirmDeleteRole(item)}
             modalProps={{ buttonColor: 'danger' }}
             iconType="trash"

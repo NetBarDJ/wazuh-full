@@ -139,7 +139,7 @@ export const Policies = () => {
     setIsEditingPolicy(false);
     await getPolicies();
   };
-  
+
   const closeCreatingFlyout = async () => {
     setIsCreatingPolicy(false);
     await getPolicies();
@@ -164,21 +164,21 @@ export const Policies = () => {
       <EuiPageContentHeader>
         <EuiPageContentHeaderSection>
           <EuiTitle>
-            <h2>Policies</h2>
+            <h2>策略管理</h2>
           </EuiTitle>
         </EuiPageContentHeaderSection>
         <EuiPageContentHeaderSection>
-         { 
+         {
           !loading
           &&
           <div>
             <EuiButton
               onClick={() => setIsCreatingPolicy(true)}>
-              Create policy
+              新建策略
             </EuiButton>
             {flyout}
             {editFlyout}
-          </div>          
+          </div>
         }
         </EuiPageContentHeaderSection>
       </EuiPageContentHeader>

@@ -240,9 +240,9 @@ export const EditUser = ({ currentUser, closeFlyout, rolesObject }) => {
         <EuiFlyoutHeader hasBorder={false}>
           <EuiTitle size="m">
             <h2>
-              Edit {currentUser.username} user &nbsp; &nbsp;
+              Edit {currentUser.username} 账号 &nbsp; &nbsp;
               {WzAPIUtils.isReservedID(currentUser.id) && (
-                <EuiBadge color="primary">Reserved</EuiBadge>
+                <EuiBadge color="primary">默认</EuiBadge>
               )}
             </h2>
           </EuiTitle>
@@ -251,12 +251,12 @@ export const EditUser = ({ currentUser, closeFlyout, rolesObject }) => {
           <EuiForm component="form" style={{ padding: 24 }}>
             <EuiPanel>
               <EuiTitle size="s">
-                <h2>Run as</h2>
+                <h2>运行权限</h2>
               </EuiTitle>
-              <EuiFormRow label="" helpText="Set if the user is able to use run as">
+              <EuiFormRow label="" helpText="设置账号是否有运行权限">
                 <WzButtonPermissions
                   buttonType="switch"
-                  label="Allow run as"
+                  label="运行权限"
                   showLabel={true}
                   checked={allowRunAs}
                   permissions={[{ action: 'security:edit_run_as', resource: '*:*:*' }]}
@@ -269,16 +269,16 @@ export const EditUser = ({ currentUser, closeFlyout, rolesObject }) => {
             <EuiSpacer />
             <EuiPanel>
               <EuiTitle size="s">
-                <h2>Password</h2>
+                <h2>账号密码</h2>
               </EuiTitle>
               <EuiFormRow
                 label=""
                 isInvalid={!!formErrors.password}
                 error={formErrors.password}
-                helpText="Introduce a new password for the user."
+                helpText="用户账号登陆的密码。"
               >
                 <EuiFieldPassword
-                  placeholder="Password"
+                  placeholder="账号密码"
                   value={password}
                   onChange={(e) => onChangePassword(e)}
                   aria-label=""
@@ -290,10 +290,10 @@ export const EditUser = ({ currentUser, closeFlyout, rolesObject }) => {
                 label=""
                 isInvalid={!!formErrors.confirmPassword}
                 error={formErrors.confirmPassword}
-                helpText="Confirm the new password."
+                helpText="请确认您的新密码。"
               >
                 <EuiFieldPassword
-                  placeholder="Confirm Password"
+                  placeholder="请确认密码"
                   value={confirmPassword}
                   onChange={(e) => onChangeConfirmPassword(e)}
                   aria-label=""
@@ -305,11 +305,11 @@ export const EditUser = ({ currentUser, closeFlyout, rolesObject }) => {
             <EuiSpacer />
             <EuiPanel>
               <EuiTitle size="s">
-                <h2>Roles</h2>
+                <h2>角色</h2>
               </EuiTitle>
-              <EuiFormRow label="" helpText="Assign roles to the selected user">
+              <EuiFormRow label="" helpText="为所选用户分配角色">
                 <EuiComboBox
-                  placeholder="Select roles"
+                  placeholder="选择角色"
                   options={rolesOptions}
                   selectedOptions={selectedRoles}
                   isLoading={rolesLoading || isLoading}
@@ -330,7 +330,7 @@ export const EditUser = ({ currentUser, closeFlyout, rolesObject }) => {
                   isDisabled={WzAPIUtils.isReservedID(currentUser.id) || !showApply}
                   onClick={editUser}
                 >
-                  Apply
+                  确认提交
                 </EuiButton>
               </EuiFlexItem>
             </EuiFlexGroup>

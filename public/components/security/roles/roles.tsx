@@ -71,7 +71,7 @@ export const Roles = () => {
   let editFlyout;
   if (isEditFlyoutVisible) {
     editFlyout = (
-        <EditRole role={editingRole} 
+        <EditRole role={editingRole}
         closeFlyout={async (isVisible) => {
           setIsEditFlyoutVisible(isVisible);
           await getData();
@@ -84,7 +84,7 @@ export const Roles = () => {
       <EuiPageContentHeader>
         <EuiPageContentHeaderSection>
           <EuiTitle>
-            <h2>Roles</h2>
+            <h2>角色管理</h2>
           </EuiTitle>
         </EuiPageContentHeaderSection>
         <EuiPageContentHeaderSection>
@@ -94,7 +94,7 @@ export const Roles = () => {
           <div>
             <EuiButton
               onClick={() => setIsFlyoutVisible(true)}>
-              Create role
+              创建角色
                         </EuiButton>
             {flyout}
             {editFlyout}

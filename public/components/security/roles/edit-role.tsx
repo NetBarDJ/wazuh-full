@@ -168,8 +168,8 @@ export const EditRole = ({ role, closeFlyout }) => {
         <EuiFlyoutHeader hasBorder={false}>
           <EuiTitle size="m">
             <h2>
-              Edit {role.name} role &nbsp;
-              {isReserved && <EuiBadge color="primary">Reserved</EuiBadge>}
+              编辑 {role.name} 角色 &nbsp;
+              {isReserved && <EuiBadge color="primary">默认</EuiBadge>}
             </h2>
           </EuiTitle>
         </EuiFlyoutHeader>
@@ -178,13 +178,13 @@ export const EditRole = ({ role, closeFlyout }) => {
             <EuiFlexGroup>
               <EuiFlexItem grow={true}>
                 <EuiFormRow
-                  label="Policies"
+                  label="策略"
                   isInvalid={selectedPoliciesError}
-                  error={'At least one policy must be selected.'}
-                  helpText="Assign policies to the role."
+                  error={'必须至少选择一个策略。'}
+                  helpText="为角色分配策略。"
                 >
                   <EuiComboBox
-                    placeholder="Select policies"
+                    placeholder="选择策略"
                     options={policies}
                     isDisabled={isReserved}
                     selectedOptions={selectedPolicies}
@@ -201,7 +201,7 @@ export const EditRole = ({ role, closeFlyout }) => {
                   fill
                   onClick={addPolicy}
                 >
-                  Add policy
+                  添加策略
                 </EuiButton>
               </EuiFlexItem>
             </EuiFlexGroup>

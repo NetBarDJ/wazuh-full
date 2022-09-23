@@ -309,12 +309,12 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
       <WzFlyout flyoutProps={{ className: 'wzApp' }} onClose={onClose}>
         <EuiFlyoutHeader hasBorder={false}>
           <EuiTitle size="m">
-            <h2>New policy</h2>
+            <h2>新建策略</h2>
           </EuiTitle>
         </EuiFlyoutHeader>
         <EuiFlyoutBody>
           <EuiForm component="form" style={{ padding: 24 }}>
-            <EuiFormRow label="Policy name" helpText="Introduce a name for this new policy.">
+            <EuiFormRow label="策略名" helpText="为这项新策略取一个名字。">
               <EuiFieldText
                 placeholder=""
                 value={policyName}
@@ -326,8 +326,8 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
             <EuiFlexGroup>
               <EuiFlexItem>
                 <EuiFormRow
-                  label="Action"
-                  helpText="Set an action where the policy will be carried out."
+                  label="动作"
+                  helpText="制定执行策略的动作。"
                 >
                   <EuiSuperSelect
                     options={actions}
@@ -346,7 +346,7 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
                     iconType="plusInCircle"
                     disabled={!actionValue}
                   >
-                    Add
+                    添加
                   </EuiButton>
                 </EuiFormRow>
               </EuiFlexItem>
@@ -365,8 +365,8 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
             <EuiFlexGroup>
               <EuiFlexItem>
                 <EuiFormRow
-                  label="Resource"
-                  helpText="Select the resource to which this policy is directed."
+                  label="资源"
+                  helpText="选择此策略定向到的资源。"
                 >
                   <EuiSuperSelect
                     options={resources}
@@ -380,8 +380,8 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
               </EuiFlexItem>
               <EuiFlexItem>
                 <EuiFormRow
-                  label="Resource identifier"
-                  helpText="Introduce the resource identifier. Type * for all."
+                  label="资源标识符"
+                  helpText="为所有人标识此资源标识符。"
                 >
                   <EuiFieldText
                     placeholder={getIdentifier()}
@@ -398,7 +398,7 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
                     iconType="plusInCircle"
                     disabled={!resourceIdentifierValue}
                   >
-                    Add
+                    添加
                   </EuiButton>
                 </EuiFormRow>
               </EuiFlexItem>
@@ -414,7 +414,7 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
               </>
             )}
             <EuiSpacer></EuiSpacer>
-            <EuiFormRow label="Select an effect" helpText="Select an effect.">
+            <EuiFormRow label="选择效果" helpText="选择效果。">
               <EuiSuperSelect
                 options={effectOptions}
                 valueOfSelected={effectValue}
@@ -431,7 +431,7 @@ export const CreatePolicyFlyout = ({ closeFlyout }) => {
               }}
               fill
             >
-              Create policy
+              创建策略
             </EuiButton>
           </EuiForm>
         </EuiFlyoutBody>

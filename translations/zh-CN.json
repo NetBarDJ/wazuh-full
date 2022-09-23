@@ -410,6 +410,27 @@
     "public.components.agent.fim.inventory.table.uname": "用户名",
     "public.components.overview.mitre.components.tactics.Options": "Options",
     "public.components.overview.mitre.components.tactics.select.all": "Select all",
-    "public.components.overview.mitre.components.tactics.unselect.all": "Unselect all"
+    "public.components.overview.mitre.components.tactics.unselect.all": "Unselect all",
+    "public.components.security.policies.components.table.Actions": "Actions",
+    "public.components.security.policies.components.table.id": "ID",
+    "public.components.security.policies.components.table.name": "Name",
+    "public.components.security.policies.components.table.policy.actions": "Actions",
+    "public.components.security.policies.components.table.policy.effect": "Effect",
+    "public.components.security.policies.components.table.policy.resources": "Resources",
+    "public.components.security.policies.components.table.Status": "Status",
+    "public.components.security.roles.components.table.Actions": "Actions",
+    "public.components.security.roles.components.table.id": "ID",
+    "public.components.security.roles.components.table.name": "Name",
+    "public.components.security.roles.components.table.Policies": "Policies",
+    "public.components.security.roles.components.table.Status": "Status",
+    "public.components.security.roles.mapping.components.table.Actions": "Actions",
+    "public.components.security.roles.mapping.components.table.id": "ID",
+    "public.components.security.roles.mapping.components.table.name": "Name",
+    "public.components.security.roles.mapping.components.table.roles": "Roles",
+    "public.components.security.roles.mapping.components.table.Status": "Status",
+    "public.components.security.users.components.table.Actions": "Actions",
+    "public.components.security.users.components.table.allow_run_as": "Allow run as ",
+    "public.components.security.users.components.table.roles": "Roles",
+    "public.components.security.users.components.table.username": "User"
   }
 }

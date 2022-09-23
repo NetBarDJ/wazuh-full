@@ -97,7 +97,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
     setIsLogicalPopoverOpen(isLogicalPopoverOpen => !isLogicalPopoverOpen);
   const closeLogicalPopover = () => setIsLogicalPopoverOpen(false);
 
-  const selectOperator = op => {  
+  const selectOperator = op => {
     setLogicalOperator(op);
     closeLogicalPopover();
   };
@@ -125,7 +125,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
     rulesTmp.splice(id, 1);
     setRules(rulesTmp);
   };
-  
+
   const getRulesFromJson = (jsonRule) => {
     if (jsonRule !== '{}' && jsonRule !== '') {
       // empty json is valid
@@ -217,9 +217,9 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
     setRules(rulesTmp);
   };
 
-  const openJsonEditor = () => {  
+  const openJsonEditor = () => {
     const ruleObject = getJsonFromRule(internalUserRules, rules, logicalOperator);
-    
+
     setRuleJson(JSON.stringify(ruleObject, undefined, 2));
     setIsJsonEditor(true);
   };
@@ -242,14 +242,14 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
             isDisabled={hasWrongFormat}
             onClick={() => openVisualEditor()}
           >
-            Switch to visual editor
+            切换到可视化编辑器
           </EuiButtonEmpty>
         </EuiToolTip>
       );
     } else {
       return (
         <EuiButtonEmpty color="primary" onClick={() => openVisualEditor()}>
-          Switch to visual editor
+          切换到可视化编辑器
         </EuiButtonEmpty>
       );
     }
@@ -258,7 +258,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
   const saveRule = () => {
     if (isJsonEditor) {
       // if json editor is empty
-      if (ruleJson === '') {       
+      if (ruleJson === '') {
         setRuleJson('{}');
       }
       save(JSON.parse(ruleJson));
@@ -292,18 +292,18 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
     <>
       <EuiPanel>
         <EuiTitle>
-          <h1>Mapping rules</h1>
+          <h1>角色映射</h1>
         </EuiTitle>
         <EuiFlexGroup>
           <EuiFlexItem>
             <EuiText>
-              <span>Assign roles to users who match these rules. </span>
+              <span>将角色分配给符合这些规则的用户。 </span>
               <EuiLink
                 href={webDocumentationLink('user-manual/api/rbac/auth-context.html')}
                 external
                 target="_blank"
               >
-                Learn more
+                了解更多
               </EuiLink>
             </EuiText>
           </EuiFlexItem>
@@ -326,14 +326,14 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
               )) || (
                   <Fragment>
                     <EuiTitle size="s">
-                      <h2>Map internal users</h2>
+                      <h2>映射内部用户</h2>
                     </EuiTitle>
                     <EuiFormRow
-                      label="Internal users"
-                      helpText="Assign internal users to the selected role mapping"
+                      label="内部用户"
+                      helpText="将内部用户分配给所选角色映射"
                     >
                       <EuiComboBox
-                        placeholder="Select internal users"
+                        placeholder="选择内部用户"
                         options={internalUsersOptions}
                         selectedOptions={selectedUsers}
                         isLoading={isLoading}
@@ -344,7 +344,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
                     </EuiFormRow>
                     <EuiSpacer />
                     <EuiTitle size="s">
-                      <h2>Custom rules</h2>
+                      <h2>自定义规则</h2>
                     </EuiTitle>
                     <EuiPopover
                       ownFocus
@@ -355,7 +355,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
                           iconType="arrowDown"
                           iconSide="right"
                         >
-                          {logicalOperator === 'AND' ? 'All are true' : 'Any are true'}
+                          {logicalOperator === 'AND' ? '均为True' : '任意一个'}
                         </EuiButtonEmpty>
                       }
                       isOpen={isLogicalPopoverOpen}
@@ -370,7 +370,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
                               color="text"
                               onClick={() => selectOperator('AND')}
                             >
-                              {logicalOperator === 'AND' && <EuiIcon type="check" />}All are true
+                              {logicalOperator === 'AND' && <EuiIcon type="check" />}均为True
                           </EuiButtonEmpty>
                           </EuiFlexItem>
                         </EuiFlexGroup>
@@ -381,7 +381,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
                               color="text"
                               onClick={() => selectOperator('OR')}
                             >
-                              {logicalOperator === 'OR' && <EuiIcon type="check" />}Any are true
+                              {logicalOperator === 'OR' && <EuiIcon type="check" />}任意一个
                           </EuiButtonEmpty>
                           </EuiFlexItem>
                         </EuiFlexGroup>
@@ -394,7 +394,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
                       color="primary"
                       onClick={() => addNewRule()}
                     >
-                      Add new rule
+                      添加新规则
                   </EuiButtonEmpty>
                   </Fragment>
                 )}
@@ -405,7 +405,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
           <EuiFlexItem grow={false}>
             {(isJsonEditor && getSwitchVisualButton()) || (
               <EuiButtonEmpty color="primary" onClick={() => openJsonEditor()}>
-                Switch to JSON editor
+                切换到JSON编辑器
               </EuiButtonEmpty>
             )}
           </EuiFlexItem>
@@ -415,7 +415,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
         <EuiFlexItem></EuiFlexItem>
         <EuiFlexItem grow={false}>
           <EuiButton disabled={isReserved} isLoading={isLoading} fill onClick={() => saveRule()}>
-            Save role mapping
+            保存角色映射
           </EuiButton>
         </EuiFlexItem>
       </EuiFlexGroup>

@@ -115,7 +115,7 @@ export const Users = () => {
       <EuiPageContentHeader>
         <EuiPageContentHeaderSection>
           <EuiTitle>
-            <h2>Users</h2>
+            <h2>用户管理</h2>
           </EuiTitle>
         </EuiPageContentHeaderSection>
         <EuiPageContentHeaderSection>
@@ -123,7 +123,7 @@ export const Users = () => {
             !rolesLoading
             &&
             <div>
-              <EuiButton onClick={() => setIsCreateFlyoutVisible(true)}>Create user</EuiButton>
+              <EuiButton onClick={() => setIsCreateFlyoutVisible(true)}>创建用户</EuiButton>
               {createFlyout}
             </div>
           }

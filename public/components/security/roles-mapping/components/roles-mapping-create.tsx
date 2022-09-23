@@ -1,37 +1,35 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-  EuiTitle,
-  EuiFlyout,
-  EuiFlyoutHeader,
-  EuiFlyoutBody,
-  EuiForm,
-  EuiFormRow,
-  EuiSpacer,
+  EuiComboBox,
+  EuiConfirmModal,
+  EuiFieldText,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiComboBox,
-  EuiFieldText,
+  EuiFlyoutBody,
+  EuiFlyoutHeader,
+  EuiForm,
+  EuiFormRow,
   EuiOverlayMask,
-  EuiOutsideClickDetector,
-  EuiConfirmModal,
+  EuiSpacer,
+  EuiTitle,
 } from '@elastic/eui';
-import { ErrorHandler } from '../../../../react-services/error-handler';
-import { RuleEditor } from './rule-editor';
+import {ErrorHandler} from '../../../../react-services/error-handler';
+import {RuleEditor} from './rule-editor';
 import RulesServices from '../../rules/services';
 import RolesServices from '../../roles/services';
-import { UI_LOGGER_LEVELS } from '../../../../../common/constants';
-import { UI_ERROR_SEVERITIES } from '../../../../react-services/error-orchestrator/types';
-import { getErrorOrchestrator } from '../../../../react-services/common-services';
-import { WzFlyout } from '../../../common/flyouts';
+import {UI_LOGGER_LEVELS} from '../../../../../common/constants';
+import {UI_ERROR_SEVERITIES} from '../../../../react-services/error-orchestrator/types';
+import {getErrorOrchestrator} from '../../../../react-services/common-services';
+import {WzFlyout} from '../../../common/flyouts';
 
 export const RolesMappingCreate = ({
-  closeFlyout,
-  rolesEquivalences,
-  roles,
-  internalUsers,
-  onSave,
-  currentPlatform,
-}) => {
+                                     closeFlyout,
+                                     rolesEquivalences,
+                                     roles,
+                                     internalUsers,
+                                     onSave,
+                                     currentPlatform,
+                                   }) => {
   const [selectedRoles, setSelectedRoles] = useState<any[]>([]);
   const [ruleName, setRuleName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +40,7 @@ export const RolesMappingCreate = ({
   const [hasChanges, setHasChanges] = useState(false);
   const getRolesList = () => {
     const list = roles.map((item) => {
-      return { label: rolesEquivalences[item.id], id: item.id };
+      return {label: rolesEquivalences[item.id], id: item.id};
     });
     return list;
   };
@@ -94,7 +92,7 @@ export const RolesMappingCreate = ({
           cancelButtonText="No, don't do it"
           confirmButtonText="Yes, do it"
         >
-          <p style={{ textAlign: 'center' }}>
+          <p style={{textAlign: 'center'}}>
             There are unsaved changes. Are you sure you want to proceed?
           </p>
         </EuiConfirmModal>
@@ -120,34 +118,34 @@ export const RolesMappingCreate = ({
 
   return (
     <>
-      <WzFlyout flyoutProps={{ className: 'wzApp' }} onClose={onClose}>
+      <WzFlyout flyoutProps={{className: 'wzApp'}} onClose={onClose}>
         <EuiFlyoutHeader hasBorder={false}>
           <EuiTitle size="m">
-            <h2>Create new role mapping &nbsp;</h2>
+            <h2>创建新的角色映射 &nbsp;</h2>
           </EuiTitle>
         </EuiFlyoutHeader>
         <EuiFlyoutBody>
-          <EuiForm component="form" style={{ padding: 24 }}>
+          <EuiForm component="form" style={{padding: 24}}>
             <EuiFormRow
-              label="Role mapping name"
+              label="角色映射名称"
               isInvalid={false}
-              error={'Please provide a role mapping name'}
-              helpText="Introduce a name for this role mapping."
+              error={'请提供角色映射名称'}
+              helpText="介绍此角色映射的名称。"
             >
               <EuiFieldText
-                placeholder="Role name"
+                placeholder="角色名称"
                 value={ruleName}
                 onChange={(e) => setRuleName(e.target.value)}
               />
             </EuiFormRow>
             <EuiFormRow
-              label="Roles"
+              label="角色"
               isInvalid={false}
-              error={'At least one role must be selected.'}
-              helpText="Assign roles to your users."
+              error={'必须至少选择一个角色。'}
+              helpText="为用户分配角色。"
             >
               <EuiComboBox
-                placeholder="Select roles"
+                placeholder="选择角色"
                 options={getRolesList()}
                 isDisabled={false}
                 selectedOptions={selectedRoles}
@@ -158,9 +156,9 @@ export const RolesMappingCreate = ({
                 data-test-subj="demoComboBox"
               />
             </EuiFormRow>
-            <EuiSpacer />
+            <EuiSpacer/>
           </EuiForm>
-          <EuiFlexGroup style={{ padding: '0px 24px 24px 24px' }}>
+          <EuiFlexGroup style={{padding: '0px 24px 24px 24px'}}>
             <EuiFlexItem>
               <RuleEditor
                 save={(rule) => createRule(rule)}

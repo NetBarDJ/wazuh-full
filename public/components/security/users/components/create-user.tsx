@@ -251,24 +251,24 @@ export const CreateUser = ({ closeFlyout }) => {
       <WzFlyout onClose={onClose} flyoutProps={{ className: 'wzApp' }}>
         <EuiFlyoutHeader hasBorder={false}>
           <EuiTitle size="m">
-            <h2>Create new user</h2>
+            <h2>创建新用户</h2>
           </EuiTitle>
         </EuiFlyoutHeader>
         <EuiFlyoutBody>
           <EuiForm component="form" style={{ padding: 24 }}>
             <EuiPanel>
               <EuiTitle size="s">
-                <h2>User data</h2>
+                <h2>用户数据</h2>
               </EuiTitle>
               <EuiSpacer />
               <EuiFormRow
-                label="User name"
+                label="用户账号"
                 isInvalid={!!formErrors.userName}
                 error={formErrors.userName}
-                helpText="Introduce the user name for the user."
+                helpText="用于账号登陆的用户名。"
               >
                 <EuiFieldText
-                  placeholder="User name"
+                  placeholder="请输入用户名"
                   value={userName}
                   onChange={(e) => onChangeUserName(e)}
                   aria-label=""
@@ -276,13 +276,13 @@ export const CreateUser = ({ closeFlyout }) => {
                 />
               </EuiFormRow>
               <EuiFormRow
-                label="Password"
+                label="账号密码"
                 isInvalid={!!formErrors.password}
                 error={formErrors.password}
-                helpText="Introduce a new password for the user."
+                helpText="用于账号登陆的密码。"
               >
                 <EuiFieldPassword
-                  placeholder="Password"
+                  placeholder="请输入账号密码"
                   value={password}
                   onChange={(e) => onChangePassword(e)}
                   aria-label=""
@@ -290,23 +290,23 @@ export const CreateUser = ({ closeFlyout }) => {
                 />
               </EuiFormRow>
               <EuiFormRow
-                label="Confirm Password"
+                label="确认密码"
                 isInvalid={!!formErrors.confirmPassword}
                 error={formErrors.confirmPassword}
-                helpText="Confirm the new password."
+                helpText="请确认您的密码"
               >
                 <EuiFieldPassword
-                  placeholder="Confirm Password"
+                  placeholder="确认密码 "
                   value={confirmPassword}
                   onChange={(e) => onChangeConfirmPassword(e)}
                   aria-label=""
                   isInvalid={!!formErrors.confirmPassword}
                 />
               </EuiFormRow>
-              <EuiFormRow label="Allow run as" helpText="Set if the user is able to use run as">
+              <EuiFormRow label="运行权限" helpText="设置用户是否可以使用该账号运行">
                 <WzButtonPermissions
                   buttonType="switch"
-                  label="Allow run as"
+                  label="运行权限"
                   showLabel={false}
                   checked={allowRunAs}
                   permissions={[{ action: 'security:edit_run_as', resource: '*:*:*' }]}
@@ -318,11 +318,11 @@ export const CreateUser = ({ closeFlyout }) => {
             <EuiSpacer />
             <EuiPanel>
               <EuiTitle size="s">
-                <h2>User roles</h2>
+                <h2>用户角色</h2>
               </EuiTitle>
-              <EuiFormRow label="" helpText="Assign roles to the selected user">
+              <EuiFormRow label="" helpText="为所选用户分配角色">
                 <EuiComboBox
-                  placeholder="Select roles"
+                  placeholder="选择角色"
                   options={rolesOptions}
                   selectedOptions={selectedRoles}
                   isLoading={rolesLoading || isLoading}
@@ -336,7 +336,7 @@ export const CreateUser = ({ closeFlyout }) => {
             <EuiFlexGroup>
               <EuiFlexItem grow={false}>
                 <EuiButton fill isLoading={isLoading} onClick={editUser} isDisabled={!showApply}>
-                  Apply
+                  确认提交
                 </EuiButton>
               </EuiFlexItem>
             </EuiFlexGroup>

@@ -139,16 +139,16 @@ export const CreateRole = ({ closeFlyout }) => {
       <WzFlyout flyoutProps={{ className: 'wzApp' }} onClose={onClose}>
         <EuiFlyoutHeader hasBorder={false}>
           <EuiTitle size="m">
-            <h2>New role</h2>
+            <h2>创建新角色</h2>
           </EuiTitle>
         </EuiFlyoutHeader>
         <EuiFlyoutBody>
           <EuiForm component="form" style={{ padding: 24 }}>
             <EuiFormRow
-              label="Role name"
+              label="角色名"
               isInvalid={roleNameError}
-              error={'Please provide a role name'}
-              helpText="Introduce a name for this new role."
+              error={'请提供角色名'}
+              helpText="为这个新角色介绍一个名字。"
             >
               <EuiFieldText
                 placeholder=""
@@ -158,13 +158,13 @@ export const CreateRole = ({ closeFlyout }) => {
               />
             </EuiFormRow>
             <EuiFormRow
-              label="Policies"
+              label="策略"
               isInvalid={selectedPoliciesError}
-              error={'At least one policy must be selected.'}
-              helpText="Assign policies to the role."
+              error={'必须至少选择一个策略。'}
+              helpText="为角色分配策略。"
             >
               <EuiComboBox
-                placeholder="Select policies"
+                placeholder="选择策略"
                 options={policies}
                 selectedOptions={selectedPolicies}
                 onChange={onChangePolicies}
@@ -174,7 +174,7 @@ export const CreateRole = ({ closeFlyout }) => {
             </EuiFormRow>
             <EuiSpacer />
             <EuiButton fill onClick={createUser}>
-              Create role
+              创建角色
             </EuiButton>
           </EuiForm>
         </EuiFlyoutBody>
