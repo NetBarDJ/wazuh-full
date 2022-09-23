@@ -431,6 +431,20 @@
     "public.components.security.users.components.table.Actions": "Actions",
     "public.components.security.users.components.table.allow_run_as": "Allow run as ",
     "public.components.security.users.components.table.roles": "Roles",
-    "public.components.security.users.components.table.username": "User"
+    "public.components.security.users.components.table.username": "User",
+    "public.controllers.management.components.management.ruleset.utils.columns.Actions": "Actions",
+    "public.controllers.management.components.management.ruleset.utils.columns.description": "Description",
+    "public.controllers.management.components.management.ruleset.utils.columns.details.order": "Order",
+    "public.controllers.management.components.management.ruleset.utils.columns.details.program_name": "Program name",
+    "public.controllers.management.components.management.ruleset.utils.columns.filename.File": "File",
+    "public.controllers.management.components.management.ruleset.utils.columns.filename.filename": "filename",
+    "public.controllers.management.components.management.ruleset.utils.columns.filename.Name": "Name",
+    "public.controllers.management.components.management.ruleset.utils.columns.groups": "Groups",
+    "public.controllers.management.components.management.ruleset.utils.columns.id": "ID",
+    "public.controllers.management.components.management.ruleset.utils.columns.level": "Level",
+    "public.controllers.management.components.management.ruleset.utils.columns.name": "Name",
+    "public.controllers.management.components.management.ruleset.utils.columns.path": "path",
+    "public.controllers.management.components.management.ruleset.utils.columns.Regulatory.compliance": "Regulatory compliance",
+    "public.controllers.management.components.management.ruleset.utils.columns.relative_dirname": "Path"
   }
 }
